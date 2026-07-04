@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 840 280" width="840" height="280">
+  <defs>
+    <style>text{font-family:'DM Sans',ui-sans-serif,system-ui,sans-serif;font-weight:500}</style>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="840" height="280" fill="#ffffff"/>
+  <rect x="30" y="50" width="170" height="80" rx="8" fill="#dcfce7" stroke="#166534" stroke-width="2"/>
+  <text x="115" y="71" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="12">Application</text>
+  <text x="115" y="90" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="12">Software</text>
+  <text x="115" y="109" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="12">(writes byte)</text>
+  <line x1="200" y1="90" x2="250" y2="90" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="250" y="50" width="160" height="80" rx="8" fill="#cffafe" stroke="#0e7490" stroke-width="2"/>
+  <text x="330" y="80" text-anchor="middle" dominant-baseline="middle" fill="#164e63" font-size="13">TX FIFO</text>
+  <text x="330" y="100" text-anchor="middle" dominant-baseline="middle" fill="#164e63" font-size="13">(8–16 bytes)</text>
+  <line x1="410" y1="90" x2="460" y2="90" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="460" y="50" width="180" height="80" rx="8" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+  <text x="550" y="81" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="12">Shift Register</text>
+  <text x="550" y="100" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="12">(parallel → serial)</text>
+  <line x1="640" y1="90" x2="700" y2="90" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="700" y="50" width="130" height="80" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="765" y="81" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">TX Pin</text>
+  <text x="765" y="100" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">(3.3V TTL)</text>
+  <rect x="380" y="200" width="220" height="60" rx="8" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>
+  <text x="490" y="220" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="13">Baud Rate Generator</text>
+  <text x="490" y="240" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="13">(CLK ÷ divisor)</text>
+  <line x1="550" y1="200" x2="550" y2="130" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+</svg>

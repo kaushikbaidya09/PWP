@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-svg-base="../assets/svg/">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>404 - Page Not Found</title>
+        <meta name="description" content="The page you are looking for could not be found." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+        <style>
+            html,
+            body {
+                overflow: hidden;
+                height: 100%;
+            }
+
+            .error-section {
+                position: relative;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 56px;
+            }
+
+            .error-inner {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 14px;
+                max-width: 480px;
+                width: 100%;
+                padding: 0 24px;
+            }
+
+            /* Positioned out of flow so it never shifts the existing layout */
+            .error-caution {
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-bottom: 20px;
+                color: var(--text);
+                animation: caution-flicker 4.5s ease-in-out infinite;
+            }
+
+            .error-caution svg {
+                width: clamp(80px, 15vw, 112px);
+                height: clamp(80px, 15vw, 112px);
+                display: block;
+            }
+
+            @keyframes caution-flicker {
+                0%,
+                52%,
+                58%,
+                64%,
+                100% {
+                    opacity: 1;
+                }
+                55% {
+                    opacity: 0.12;
+                }
+                61% {
+                    opacity: 0.4;
+                }
+            }
+
+            .error-num {
+                font-size: clamp(80px, 15vw, 112px);
+                font-weight: 800;
+                letter-spacing: -0.05em;
+                color: var(--text);
+                line-height: 1;
+                margin: 0;
+            }
+
+            .error-title {
+                font-size: clamp(20px, 4vw, 26px);
+                font-weight: 700;
+                letter-spacing: -0.02em;
+                color: var(--text);
+                margin: 0;
+                text-align: center;
+            }
+
+            .error-desc {
+                font-size: 15px;
+                color: var(--text-2);
+                line-height: 1.65;
+                margin: 0;
+                text-align: center;
+            }
+
+            .error-actions {
+                margin-top: 10px;
+            }
+
+            /* Full-width divider pinned to the bottom of the section */
+            .error-contact {
+                position: absolute;
+                bottom: 24px;
+                left: 0;
+                right: 0;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                font-size: 12px;
+                color: var(--text-3);
+                padding: 0 16px;
+                white-space: nowrap;
+                justify-content: center;
+            }
+
+            .error-contact::before {
+                content: '';
+                flex: 1;
+                height: 1px;
+                background: linear-gradient(to right, transparent, var(--border));
+            }
+
+            .error-contact::after {
+                content: '';
+                flex: 1;
+                height: 1px;
+                background: linear-gradient(to left, transparent, var(--border));
+            }
+
+            .error-contact a {
+                color: inherit;
+                text-decoration: underline;
+                text-underline-offset: 3px;
+                white-space: nowrap;
+            }
+
+            .error-contact a:hover {
+                color: var(--text-2);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-frame" id="page-frame">
+            <div class="bg-grid" aria-hidden="true"></div>
+
+            <section class="error-section">
+                <div class="error-inner">
+                    <div class="error-caution" aria-hidden="true">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path
+                                d="M10.29 3.86 1.82 18a1.5 1.5 0 0 0 1.28 2.25h17.8A1.5 1.5 0 0 0 22.18 18L13.71 3.86a1.5 1.5 0 0 0-2.42 0Z"
+                            />
+                            <path d="M12 9v4" />
+                            <path d="M12 17h.01" />
+                        </svg>
+                    </div>
+                    <p class="error-num" id="error-num">404</p>
+                    <h1 class="error-title" id="error-title">Page not found</h1>
+                    <p class="error-desc" id="error-desc">
+                        Well, this is awkward,<br />You found my secret page,
+                    </p>
+                    <div class="error-actions">
+                        <a href="../index.html" class="btn btn--gray">Go back home</a>
+                    </div>
+                </div>
+
+                <p class="error-contact">
+                    If you think this is a mistake, please
+                    <a href="contact.html">contact support</a>
+                </p>
+            </section>
+        </div>
+
+        <script>
+            (function () {
+                var code = new URLSearchParams(location.search).get('code') || '404';
+
+                /* Show numeric codes as-is (404, 500…); map named codes to 404 */
+                var numEl = document.getElementById('error-num');
+                var titleEl = document.getElementById('error-title');
+                var descEl = document.getElementById('error-desc');
+
+                if (/^\d+$/.test(code)) {
+                    if (numEl) numEl.textContent = code;
+                }
+
+                /* Override heading/desc for server-error class */
+                if (code === 'load_failed') {
+                    if (numEl) numEl.textContent = '500';
+                    if (titleEl) titleEl.textContent = 'Something went wrong';
+                    if (descEl)
+                        descEl.textContent =
+                            'The page failed to load. Please try again or go back home.';
+                }
+            })();
+        </script>
+    </body>
+</html>

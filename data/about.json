@@ -1,0 +1,244 @@
+{
+    "meta": {
+        "title": "Kaushik Baidya | Embedded Software Engineer",
+        "description": "Embedded software engineer specialising in RTOS, Linux device drivers, automotive ECU software, and real-time systems."
+    },
+    "name": {
+        "first": "Kaushik",
+        "last": "Baidya"
+    },
+    "discipline": "Embedded Software Engineer",
+    "bio": "Building reliable software at the intersection of hardware and operating systems. 5 years specialising in RTOS, Embedded Linux, automotive ECU development, and real-time control systems.",
+    "tags": ["C / C++", "FreeRTOS", "Embedded Linux", "AUTOSAR", "CAN Bus", "Device Drivers"],
+    "status": [
+        { "label": "Current Focus", "value": "AUTOSAR BSW Integration" },
+        { "label": "Experience", "value": "5 Years" },
+        { "label": "Learning Now", "value": "Rust for Embedded" },
+        { "label": "Location", "value": "Bangalore, India" }
+    ],
+    "sections": {
+        "journey": {
+            "eyebrow": "01 / Journey",
+            "title": "Engineering Evolution",
+            "desc": "A structured progression through embedded systems - from bare metal C to automotive-grade software."
+        },
+        "skills": {
+            "eyebrow": "02 / Skills",
+            "title": "Competency Matrix",
+            "desc": "Technical depth across languages, platforms, protocols, and toolchains - each rated by production experience."
+        },
+        "stats": {
+            "eyebrow": "03 / Stats",
+            "title": "Engineering Metrics",
+            "desc": "Production experience at a glance - projects shipped, technologies mastered, and open-source contributions."
+        }
+    },
+    "skillTabs": [
+        { "key": "languages", "label": "Languages" },
+        { "key": "embedded", "label": "Embedded" },
+        { "key": "linux", "label": "Linux" },
+        { "key": "protocols", "label": "Protocols" },
+        { "key": "tools", "label": "Tools" },
+        { "key": "automotive", "label": "Automotive" }
+    ],
+    "skills": {
+        "languages": [
+            { "name": "C", "level": 95, "years": "5y", "label": "expert" },
+            { "name": "C++", "level": 80, "years": "3y", "label": "advanced" },
+            { "name": "Python", "level": 65, "years": "2y", "label": "mid" },
+            { "name": "Assembly (ARMv7)", "level": 60, "years": "3y", "label": "mid" },
+            { "name": "Bash / Shell", "level": 70, "years": "4y", "label": "advanced" },
+            { "name": "Rust", "level": 25, "years": "<1y", "label": "learning" }
+        ],
+        "embedded": [
+            { "name": "FreeRTOS", "level": 90, "years": "4y", "label": "expert" },
+            { "name": "Bare Metal / HAL", "level": 95, "years": "5y", "label": "expert" },
+            { "name": "Interrupt / DMA Design", "level": 88, "years": "4y", "label": "expert" },
+            { "name": "Low Power Design", "level": 72, "years": "2y", "label": "advanced" },
+            { "name": "ARM Cortex-M", "level": 90, "years": "5y", "label": "expert" },
+            { "name": "STM32 (F4/G4/H7)", "level": 93, "years": "5y", "label": "expert" }
+        ],
+        "linux": [
+            { "name": "Linux Kernel Modules", "level": 80, "years": "3y", "label": "advanced" },
+            { "name": "Device Drivers", "level": 82, "years": "3y", "label": "advanced" },
+            { "name": "Device Tree (DTS)", "level": 78, "years": "3y", "label": "advanced" },
+            { "name": "Yocto / OE", "level": 75, "years": "2y", "label": "advanced" },
+            { "name": "Buildroot", "level": 80, "years": "3y", "label": "advanced" },
+            { "name": "U-Boot", "level": 72, "years": "2y", "label": "advanced" }
+        ],
+        "protocols": [
+            { "name": "UART", "level": 95, "years": "5y", "label": "expert" },
+            { "name": "SPI", "level": 92, "years": "5y", "label": "expert" },
+            { "name": "I2C", "level": 90, "years": "5y", "label": "expert" },
+            { "name": "CAN 2.0 / CAN FD", "level": 88, "years": "4y", "label": "expert" },
+            { "name": "USB (CDC/HID)", "level": 60, "years": "2y", "label": "mid" },
+            { "name": "Ethernet / TCP-IP", "level": 55, "years": "1y", "label": "mid" }
+        ],
+        "tools": [
+            { "name": "GDB / OpenOCD", "level": 85, "years": "4y", "label": "advanced" },
+            { "name": "JTAG / SWD", "level": 88, "years": "4y", "label": "advanced" },
+            { "name": "Logic Analyser", "level": 90, "years": "5y", "label": "expert" },
+            { "name": "Oscilloscope", "level": 85, "years": "5y", "label": "advanced" },
+            { "name": "Git", "level": 88, "years": "5y", "label": "advanced" },
+            { "name": "Vector CANalyzer", "level": 70, "years": "2y", "label": "advanced" }
+        ],
+        "automotive": [
+            { "name": "AUTOSAR Classic", "level": 78, "years": "2y", "label": "advanced" },
+            { "name": "AUTOSAR Adaptive", "level": 55, "years": "1y", "label": "mid" },
+            { "name": "ISO 26262", "level": 65, "years": "2y", "label": "mid" },
+            { "name": "UDS (ISO 14229)", "level": 80, "years": "2y", "label": "advanced" },
+            { "name": "MISRA-C 2012", "level": 82, "years": "3y", "label": "advanced" },
+            { "name": "LIN Bus", "level": 68, "years": "2y", "label": "mid" }
+        ]
+    },
+    "arch": {
+        "embedded-stack": {
+            "layers": [
+                {
+                    "label": "Application Software",
+                    "sub": "Business logic, algorithms, control loops",
+                    "badge": "App Layer",
+                    "detail": "User-defined application code. Calls HAL and RTOS APIs. Defines tasks, interrupt handlers, and system behaviour. Should have no direct register access."
+                },
+                {
+                    "label": "RTOS",
+                    "sub": "FreeRTOS - scheduler, IPC, heap management",
+                    "badge": "OS Layer",
+                    "detail": "FreeRTOS provides preemptive multitasking, semaphores, queues, mutexes, and software timers. Tick interrupt drives the scheduler. Configurable priority levels and heap schemes."
+                },
+                {
+                    "label": "HAL / Driver Layer",
+                    "sub": "Peripheral abstraction - UART, SPI, I2C, CAN",
+                    "badge": "HAL Layer",
+                    "detail": "Hardware Abstraction Layer isolates the application from MCU-specific register addresses. Enables portability across STM32 families and other ARM Cortex-M devices."
+                },
+                {
+                    "label": "CMSIS",
+                    "sub": "Core access, NVIC, SysTick, DSP intrinsics",
+                    "badge": "ARM Layer",
+                    "detail": "Cortex Microcontroller Software Interface Standard - ARM-defined API for core peripherals (NVIC, SysTick, MPU) and compiler-independent register access."
+                },
+                {
+                    "label": "Silicon / Hardware",
+                    "sub": "MCU, peripherals, memory, external ICs",
+                    "badge": "HW",
+                    "detail": "Physical hardware: ARM Cortex-M core, flash, SRAM, peripheral IPs (USART, SPI, I2C, ADC, TIM, DMA), and external components connected via communication buses."
+                }
+            ]
+        },
+        "linux-boot": {
+            "layers": [
+                {
+                    "label": "User Space Applications",
+                    "sub": "systemd, services, application daemons",
+                    "badge": "User Space",
+                    "detail": "systemd is PID 1. It reads unit files and brings up services in parallel. Application daemons run as regular processes with no kernel privilege."
+                },
+                {
+                    "label": "C Library (glibc / musl)",
+                    "sub": "POSIX API bridge between userspace and kernel",
+                    "badge": "libc",
+                    "detail": "Provides standard C library functions and wraps Linux syscalls. musl-libc is preferred in embedded Yocto images for its small size and strict POSIX compliance."
+                },
+                {
+                    "label": "Linux Kernel",
+                    "sub": "Scheduler, VFS, drivers, memory, network",
+                    "badge": "Kernel",
+                    "detail": "Loaded by U-Boot at the physical address specified in the FIT image. The kernel decompresses, initialises architecture code, parses the device tree, and brings up drivers via the probe/match mechanism."
+                },
+                {
+                    "label": "U-Boot",
+                    "sub": "Loads kernel + DTB, handles OTA A/B swap",
+                    "badge": "Bootloader",
+                    "detail": "U-Boot initialises DRAM, establishes a boot environment, and loads the kernel FIT image from eMMC/SD/TFTP. On platforms with secure boot, U-Boot verifies FIT signature before handing off."
+                },
+                {
+                    "label": "U-Boot SPL / MLO",
+                    "sub": "SRAM-resident first-stage - DRAM init",
+                    "badge": "SPL",
+                    "detail": "Secondary Program Loader runs entirely from on-chip SRAM (before DRAM is initialised). Its sole job: configure PLLs and DRAM controller, load U-Boot into DRAM, jump."
+                },
+                {
+                    "label": "ROM Boot Code",
+                    "sub": "On-chip ROM - finds and verifies SPL",
+                    "badge": "ROM",
+                    "detail": "Burned-in ROM on the SoC. Enumerates boot sources (eMMC, SD, UART, USB), reads the MLO/SPL image, optionally verifies its signature against an OTP-stored hash, and jumps."
+                }
+            ]
+        },
+        "autosar": {
+            "layers": [
+                {
+                    "label": "Application Layer (ASW)",
+                    "sub": "Runnable entities, SWC interfaces",
+                    "badge": "ASW",
+                    "detail": "Application Software Components (SWCs) communicate only through the VFB (Virtual Functional Bus). Runnables are triggered by timing or data events, isolated from hardware."
+                },
+                {
+                    "label": "RTE (Runtime Environment)",
+                    "sub": "Generated glue - connects SWCs to BSW",
+                    "badge": "RTE",
+                    "detail": "Auto-generated by AUTOSAR toolchain. Routes inter-SWC communication and connects SWCs to BSW services (NvM, COM, Dcm). Acts as the \"virtual bus\" implementation."
+                },
+                {
+                    "label": "Services Layer",
+                    "sub": "NvM, WdgM, ComM, EcuM, Dcm",
+                    "badge": "SL",
+                    "detail": "High-level BSW services independent of the ECU hardware. NvM manages non-volatile data, WdgM monitors watchdogs, Dcm handles UDS diagnostic requests."
+                },
+                {
+                    "label": "ECU Abstraction Layer",
+                    "sub": "IoHwAb, CAN Stack, LIN, Eth",
+                    "badge": "ECUAL",
+                    "detail": "Abstracts ECU-specific hardware. IoHwAb provides signal-level ADC/DIO/PWM access. Communication stacks (CanIf, LinIf) provide bus-type-independent message routing."
+                },
+                {
+                    "label": "MCAL (Microcontroller Abstraction)",
+                    "sub": "Port, Dio, Adc, Pwm, Spi, Can, Lin drivers",
+                    "badge": "MCAL",
+                    "detail": "Vendor-specific but AUTOSAR-compliant drivers that directly access the MCU registers. MCAL is the only layer with register-level code - all layers above it are hardware-independent."
+                },
+                {
+                    "label": "Microcontroller Hardware",
+                    "sub": "MCU silicon, peripherals, external transceivers",
+                    "badge": "HW",
+                    "detail": "Physical ECU hardware. MCAL configuration (ARXML) defines pin mapping, clock frequencies, interrupt priorities, and peripheral mode - no hardcoding above this layer."
+                }
+            ]
+        },
+        "can-network": {
+            "layers": [
+                {
+                    "label": "Application / Diagnostic Layer",
+                    "sub": "UDS, CANopen, J1939 message handling",
+                    "badge": "App",
+                    "detail": "Application protocol riding over CAN frames. UDS (ISO 14229) provides diagnostic services. J1939 adds addressing and fragmentation for heavy-duty vehicles. CANopen for industrial control."
+                },
+                {
+                    "label": "ISO-TP (ISO 15765-2)",
+                    "sub": "Segmented transport for >8 byte payloads",
+                    "badge": "Transport",
+                    "detail": "Handles segmentation and reassembly of data payloads larger than one CAN frame. Used by UDS for reading/writing large data objects (e.g., ECU flash download, VIN)."
+                },
+                {
+                    "label": "CAN Data Link Layer",
+                    "sub": "Frame arbitration, error detection, ACK",
+                    "badge": "DLL",
+                    "detail": "CAN 2.0A/B / CAN FD framing: SOF, arbitration ID, control, data, CRC, ACK, EOF. CSMA/CD arbitration, bit-stuffing, 3-layer error detection (bit, stuff, CRC)."
+                },
+                {
+                    "label": "CAN Physical Layer",
+                    "sub": "Differential bus, 120 ohm termination, transceivers",
+                    "badge": "PHY",
+                    "detail": "Two-wire differential signalling (CAN_H / CAN_L). Transceivers (TJA1042, MCP2562) convert MCU CAN TX/RX logic levels to the differential bus. 120 ohm termination at each bus end."
+                }
+            ]
+        }
+    },
+    "stats": [
+        { "count": 5, "label": "Years Experience", "sub": "Embedded Systems" },
+        { "count": 23, "label": "Projects Shipped", "sub": "Production & Research" },
+        { "count": 14, "label": "Technologies", "sub": "Mastered" },
+        { "count": 3, "label": "Kernel Patches", "sub": "Accepted Upstream" }
+    ]
+}

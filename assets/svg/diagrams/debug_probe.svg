@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 700 660" width="700" height="660">
+  <defs>
+    <style>text{font-family:'DM Sans',ui-sans-serif,system-ui,sans-serif;font-weight:500}</style>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="700" height="660" fill="#ffffff"/>
+  <rect x="140" y="30" width="420" height="80" rx="8" fill="#dcfce7" stroke="#166534" stroke-width="2"/>
+  <text x="350" y="60" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="13">HOST PC</text>
+  <text x="350" y="80" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="13">GDB / IDE  (Keil, IAR, VS Code + cortex-debug)</text>
+  <line x1="350" y1="110" x2="350" y2="210" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="350" y="151" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">USB (HID / CDC)</text>
+  <rect x="140" y="210" width="420" height="80" rx="8" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+  <text x="350" y="240" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">DEBUG PROBE</text>
+  <text x="350" y="260" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">J-Link  ·  ST-LINK  ·  CMSIS-DAP</text>
+  <line x1="350" y1="290" x2="350" y2="380" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="350" y="326" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">JTAG (4–5 pin)  or  SWD (2 pin)</text>
+  <rect x="140" y="380" width="420" height="150" rx="8" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>
+  <text x="350" y="427" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">CoreSight Debug Subsystem</text>
+  <text x="350" y="446" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">DAP → AHB-AP → AHB bus</text>
+  <text x="350" y="465" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">FPB (breakpoints)  ·  DWT (watchpoints)</text>
+  <text x="350" y="484" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">ITM (trace)  ·  TPIU → SWO pin</text>
+  <line x1="350" y1="530" x2="350" y2="590" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="140" y="590" width="420" height="60" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="350" y="620" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="13">Application CPU + Peripherals</text>
+</svg>

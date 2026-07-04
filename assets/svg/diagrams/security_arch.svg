@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 720 630" width="720" height="630">
+  <defs>
+    <style>text{font-family:'DM Sans',ui-sans-serif,system-ui,sans-serif;font-weight:500}</style>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="720" height="630" fill="#ffffff"/>
+  <rect x="30" y="30" width="660" height="50" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="360" y="55" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="15">APPLICATION PROCESSOR</text>
+  <rect x="70" y="120" width="270" height="180" rx="8" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>
+  <text x="205" y="170" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="13">SECURE WORLD  (TrustZone)</text>
+  <text x="205" y="210" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="13">Key storage</text>
+  <text x="205" y="230" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="13">Crypto operations</text>
+  <text x="205" y="250" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="13">Attestation &amp; sealing</text>
+  <rect x="390" y="120" width="270" height="180" rx="8" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+  <text x="525" y="170" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">NORMAL WORLD</text>
+  <text x="525" y="210" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">RTOS / bare-metal app</text>
+  <text x="525" y="230" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">Peripheral drivers</text>
+  <text x="525" y="250" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">Application logic</text>
+  <line x1="210" y1="300" x2="340" y2="380" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="510" y1="300" x2="395" y2="380" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="205" y="380" width="310" height="80" rx="8" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>
+  <text x="360" y="410" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">SECURE BOOTLOADER</text>
+  <text x="360" y="430" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">(ROM or signed first-stage)</text>
+  <line x1="300" y1="460" x2="140" y2="545" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="400" y1="460" x2="560" y2="545" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="40" y="545" width="230" height="80" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="155" y="566" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">INTERNAL FLASH</text>
+  <text x="155" y="585" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">(CRP enabled)</text>
+  <text x="155" y="604" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">Signed firmware</text>
+  <rect x="440" y="545" width="230" height="80" rx="8" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>
+  <text x="555" y="566" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">SECURE ELEMENT</text>
+  <text x="555" y="585" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">external IC or</text>
+  <text x="555" y="604" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">embedded HSM</text>
+</svg>

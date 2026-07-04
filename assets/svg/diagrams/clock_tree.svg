@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 820 470" width="820" height="470">
+  <defs>
+    <style>text{font-family:'DM Sans',ui-sans-serif,system-ui,sans-serif;font-weight:500}</style>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="820" height="470" fill="#ffffff"/>
+  <rect x="30" y="40" width="170" height="60" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="115" y="61" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">HSE</text>
+  <text x="115" y="80" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">4–26 MHz crystal</text>
+  <rect x="30" y="120" width="170" height="60" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="115" y="141" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">HSI</text>
+  <text x="115" y="160" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">16 MHz internal RC</text>
+  <rect x="30" y="200" width="170" height="60" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="115" y="221" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">LSE</text>
+  <text x="115" y="240" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">32.768 kHz</text>
+  <rect x="30" y="280" width="170" height="60" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="115" y="301" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">LSI</text>
+  <text x="115" y="320" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">~32 kHz RC</text>
+  <line x1="200" y1="70" x2="270" y2="110" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="200" y1="150" x2="270" y2="115" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="270" y="80" width="150" height="60" rx="8" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>
+  <text x="345" y="110" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="16">PLL</text>
+  <line x1="420" y1="110" x2="480" y2="110" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="480" y="80" width="170" height="60" rx="8" fill="#cffafe" stroke="#0e7490" stroke-width="2"/>
+  <text x="565" y="100" text-anchor="middle" dominant-baseline="middle" fill="#164e63" font-size="13">SYSCLK</text>
+  <text x="565" y="120" text-anchor="middle" dominant-baseline="middle" fill="#164e63" font-size="13">168 MHz</text>
+  <line x1="650" y1="110" x2="710" y2="110" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="710" y="80" width="100" height="60" rx="8" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>
+  <text x="760" y="110" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">CPU Core</text>
+  <line x1="565" y1="140" x2="565" y2="220" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="480" y="220" width="170" height="60" rx="8" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+  <text x="565" y="240" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">AHB Bus</text>
+  <text x="565" y="260" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">÷ 1..512</text>
+  <line x1="510" y1="280" x2="430" y2="370" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="470" y="316" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">÷ 1..16</text>
+  <line x1="630" y1="280" x2="660" y2="370" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="645" y="316" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">÷ 1..16</text>
+  <rect x="350" y="370" width="170" height="80" rx="8" fill="#dcfce7" stroke="#166534" stroke-width="2"/>
+  <text x="435" y="393" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="11">APB1  (slow)</text>
+  <text x="435" y="410" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="11">USART2-5, I2C</text>
+  <text x="435" y="427" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="11">SPI2-3, DAC</text>
+  <rect x="570" y="370" width="200" height="80" rx="8" fill="#dcfce7" stroke="#166534" stroke-width="2"/>
+  <text x="670" y="393" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="11">APB2  (fast)</text>
+  <text x="670" y="410" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="11">USART1/6</text>
+  <text x="670" y="427" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="11">SPI1, ADC</text>
+</svg>

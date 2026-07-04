@@ -1,0 +1,22 @@
+{
+    "meta": {
+        "title": "Knowledge",
+        "description": "Embedded systems knowledge base - protocols, OS internals, hardware concepts with animated visualisations."
+    },
+    "pageLeft": {
+        "titleParts": ["Knowledge", "Base"],
+        "sub": "Protocols & Concepts"
+    },
+    "hero": {
+        "eyebrow": "Mental Models & First Principles",
+        "title": "Knowledge Base",
+        "desc": "Embedded systems concepts explained from first principles - protocols, OS internals, and hardware mechanics. Each topic opens with an animated diagram and full explanation."
+    },
+    "section": {
+        "label": "Phase 1 - Core Foundations"
+    },
+    "detail": {
+        "breadcrumb": "Knowledge",
+        "initialTitle": "Knowledge Detail"
+    }
+}

@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-svg-base="assets/svg/">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Loading...</title>
+        <meta name="description" content="" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+    <body>
+        <div class="page-frame" id="page-frame">
+            <div class="bg-grid" aria-hidden="true"></div>
+
+            <!-- ─── NAVIGATION ─────────────────────────────────────────────────────── -->
+            <nav id="nav" class="nav" role="navigation" aria-label="Main navigation">
+                <div class="nav__inner container">
+                    <!-- Left links -->
+                    <ul class="nav__links">
+                        <li>
+                            <a href="index.html" class="nav__link" data-nav="about">Loading...</a>
+                        </li>
+                        <li>
+                            <a
+                                href="pages/list.html?section=projects"
+                                class="nav__link"
+                                data-nav="projects"
+                                >Loading...</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="pages/list.html?section=knowledge"
+                                class="nav__link"
+                                data-nav="knowledge"
+                                >Loading...</a
+                            >
+                        </li>
+                    </ul>
+                    <!-- Centered brand -->
+                    <a href="index.html" class="nav__logo" data-nav="about" aria-label="Home">
+                        <span class="nav__logo-name">Loading...</span>
+                    </a>
+                    <!-- Right: links + actions -->
+                    <div class="nav__right">
+                        <ul class="nav__links">
+                            <li>
+                                <a
+                                    href="pages/list.html?section=blog"
+                                    class="nav__link"
+                                    data-nav="blog"
+                                    >Loading...</a
+                                >
+                            </li>
+                            <li>
+                                <a href="pages/contact.html" class="nav__link" data-nav="contact"
+                                    >Loading...</a
+                                >
+                            </li>
+                        </ul>
+                        <div class="nav__actions">
+                            <button
+                                class="theme-toggle"
+                                id="theme-toggle"
+                                aria-label="Toggle colour theme"
+                            >
+                                <svg class="icon-sun" width="18" height="18" aria-hidden="true">
+                                    <use href="#icon-sun"></use>
+                                </svg>
+                                <svg class="icon-moon" width="18" height="18" aria-hidden="true">
+                                    <use href="#icon-moon"></use>
+                                </svg>
+                            </button>
+                            <a href="pages/contact.html" class="btn btn--sm btn--gray" data-nav-cta
+                                >Loading...</a
+                            >
+                        </div>
+                    </div>
+                    <button
+                        class="nav__burger"
+                        id="nav-burger"
+                        aria-label="Toggle menu"
+                        aria-expanded="false"
+                    >
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+                <!-- Mobile dropdown -->
+                <div class="nav__dropdown" id="nav-dropdown">
+                    <a href="index.html" class="nav__link" data-nav="about">Loading...</a>
+                    <a href="pages/list.html?section=projects" class="nav__link" data-nav="projects"
+                        >Loading...</a
+                    >
+                    <a
+                        href="pages/list.html?section=knowledge"
+                        class="nav__link"
+                        data-nav="knowledge"
+                        >Loading...</a
+                    >
+                    <a href="pages/list.html?section=blog" class="nav__link" data-nav="blog"
+                        >Loading...</a
+                    >
+                    <a href="pages/contact.html" class="nav__link" data-nav="contact">Loading...</a>
+                </div>
+            </nav>
+
+            <!-- ─── FULL-WIDTH SCROLL (no split panel on About) ────────────────────── -->
+            <div class="page-body">
+                <div class="page-right page-right--wide" id="page-right">
+                    <!-- ─── HERO ───────────────────────────────────────────────────────────── -->
+                    <section id="hero" class="hero section--full">
+                        <div class="container">
+                            <div class="hero__poster" data-reveal>
+                                <p class="hero__discipline">Loading...</p>
+                                <div class="hero__rule" aria-hidden="true"></div>
+                                <h1 class="hero__name"><span class="sr-only">Loading...</span></h1>
+                                <div class="hero__rule" aria-hidden="true"></div>
+                                <p class="hero__bio">Loading...</p>
+                                <ul class="hero__tags">
+                                    <li class="tag">Loading...</li>
+                                </ul>
+                            </div>
+
+                            <ul class="hero__status-bar" aria-label="Status indicators">
+                                <li class="status-card">
+                                    <span class="status-card__icon" aria-hidden="true">
+                                        <svg
+                                            width="14"
+                                            height="14"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                        >
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polyline points="12 6 12 12 16 14" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <div class="status-card__label">Loading...</div>
+                                        <div class="status-card__value">Loading...</div>
+                                    </div>
+                                </li>
+                                <li class="status-card">
+                                    <span class="status-card__icon" aria-hidden="true">
+                                        <svg
+                                            width="14"
+                                            height="14"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                        >
+                                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <div class="status-card__label">Loading...</div>
+                                        <div class="status-card__value">Loading...</div>
+                                    </div>
+                                </li>
+                                <li class="status-card">
+                                    <span class="status-card__icon" aria-hidden="true">
+                                        <svg
+                                            width="14"
+                                            height="14"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                        >
+                                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <div class="status-card__label">Loading...</div>
+                                        <div class="status-card__value">Loading...</div>
+                                    </div>
+                                </li>
+                                <li class="status-card">
+                                    <span class="status-card__icon" aria-hidden="true">
+                                        <svg
+                                            width="14"
+                                            height="14"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                        >
+                                            <path
+                                                d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                            />
+                                            <circle cx="12" cy="10" r="3" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <div class="status-card__label">Loading...</div>
+                                        <div class="status-card__value">Loading...</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- ─── JOURNEY ────────────────────────────────────────────────────────── -->
+                    <section id="journey" class="section journey">
+                        <div class="container">
+                            <div class="about-section-head" data-reveal>
+                                <span class="about-eyebrow">Loading...</span>
+                                <div class="journey__title-row">
+                                    <h2 class="about-title">Loading...</h2>
+                                    <div class="layout-toggle">
+                                        <button
+                                            class="layout-btn"
+                                            data-layout="list"
+                                            aria-label="List view"
+                                            title="List view"
+                                        >
+                                            <svg width="14" height="14" aria-hidden="true">
+                                                <use href="#icon-list"></use>
+                                            </svg>
+                                        </button>
+                                        <button
+                                            class="layout-btn"
+                                            data-layout="grid"
+                                            aria-label="Grid view"
+                                            title="Grid view"
+                                        >
+                                            <svg width="14" height="14" aria-hidden="true">
+                                                <use href="#icon-grid"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="about-desc">Loading...</p>
+                            </div>
+
+                            <ol class="card-list" id="journey-card-list" data-reveal></ol>
+                        </div>
+                    </section>
+
+                    <!-- ─── SKILLS ─────────────────────────────────────────────────────────── -->
+                    <section id="skills" class="section skills">
+                        <div class="container">
+                            <div class="about-section-head" data-reveal>
+                                <span class="about-eyebrow">Loading...</span>
+                                <h2 class="about-title">Loading...</h2>
+                                <p class="about-desc">Loading...</p>
+                            </div>
+
+                            <div
+                                class="skills__tabs"
+                                role="tablist"
+                                aria-label="Skill categories"
+                                data-reveal
+                            >
+                                <button
+                                    class="skills-tab skills-tab--active"
+                                    role="tab"
+                                    data-cat="languages"
+                                    aria-selected="true"
+                                >
+                                    Loading...
+                                </button>
+                                <button
+                                    class="skills-tab"
+                                    role="tab"
+                                    data-cat="embedded"
+                                    aria-selected="false"
+                                >
+                                    Loading...
+                                </button>
+                                <button
+                                    class="skills-tab"
+                                    role="tab"
+                                    data-cat="linux"
+                                    aria-selected="false"
+                                >
+                                    Loading...
+                                </button>
+                                <button
+                                    class="skills-tab"
+                                    role="tab"
+                                    data-cat="protocols"
+                                    aria-selected="false"
+                                >
+                                    Loading...
+                                </button>
+                                <button
+                                    class="skills-tab"
+                                    role="tab"
+                                    data-cat="tools"
+                                    aria-selected="false"
+                                >
+                                    Loading...
+                                </button>
+                                <button
+                                    class="skills-tab"
+                                    role="tab"
+                                    data-cat="automotive"
+                                    aria-selected="false"
+                                >
+                                    Loading...
+                                </button>
+                            </div>
+
+                            <div class="skills__panel" id="skills-panel" data-reveal></div>
+                        </div>
+                    </section>
+
+                    <!-- ─── STATS ──────────────────────────────────────────────────────────── -->
+                    <section id="dashboard" class="section dashboard">
+                        <div class="container">
+                            <div class="about-section-head" data-reveal>
+                                <span class="about-eyebrow">Loading...</span>
+                                <h2 class="about-title">Loading...</h2>
+                                <p class="about-desc">Loading...</p>
+                            </div>
+
+                            <div class="dashboard__grid" data-reveal>
+                                <div class="stat-card">
+                                    <div class="stat-card__value" data-count="0">Loading...</div>
+                                    <div class="stat-card__label">Loading...</div>
+                                    <div class="stat-card__sub">Loading...</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-card__value" data-count="0">Loading...</div>
+                                    <div class="stat-card__label">Loading...</div>
+                                    <div class="stat-card__sub">Loading...</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-card__value" data-count="0">Loading...</div>
+                                    <div class="stat-card__label">Loading...</div>
+                                    <div class="stat-card__sub">Loading...</div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-card__value" data-count="0">Loading...</div>
+                                    <div class="stat-card__label">Loading...</div>
+                                    <div class="stat-card__sub">Loading...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ─── FOOTER ─────────────────────────────────────────────────────────── -->
+                    <footer class="footer">
+                        <div class="container">
+                            <div class="footer__inner">
+                                <p class="footer__copy">Loading...</p>
+                                <p class="footer__sig">Loading...</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+                <!-- /.page-right -->
+            </div>
+            <!-- /.page-body -->
+        </div>
+        <!-- /.page-frame -->
+
+        <script src="assets/js/nav-db.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/about-db.js"></script>
+        <script src="assets/js/journey-db.js"></script>
+    </body>
+</html>

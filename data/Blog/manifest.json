@@ -1,0 +1,74 @@
+[
+    {
+        "id": "spi-driver",
+        "num": "01",
+        "file": "01_Writing_a_Reusable_SPI_Driver_in_C11.md",
+        "title": "Writing a Reusable SPI Driver in C11",
+        "brief": "How to layer a portable SPI abstraction - HAL, driver, and device - so the same code targets STM32, NXP, and a PC test host running Unity tests without modification.",
+        "tags": ["SPI", "Driver", "HAL", "14 Mar 2024"]
+    },
+    {
+        "id": "priority-inversion",
+        "num": "02",
+        "file": "02_Priority_Inversion_in_FreeRTOS.md",
+        "title": "Priority Inversion in FreeRTOS - Root Cause and Fix",
+        "brief": "A worked example of the classic priority-inversion bug in a CAN logging task, diagnosed with Tracealyzer, and fixed by switching from binary semaphore to mutex.",
+        "tags": ["FreeRTOS", "RTOS", "22 Jan 2024"]
+    },
+    {
+        "id": "can-arbitration",
+        "num": "03",
+        "file": "03_CAN_Bus_Arbitration.md",
+        "title": "CAN Bus Arbitration - How It Really Works",
+        "brief": "A byte-level walkthrough of non-destructive bit arbitration, with oscilloscope captures showing dominant-wins behaviour and why lower IDs always win without any packet loss.",
+        "tags": ["CAN", "Automotive", "08 Nov 2023"]
+    },
+    {
+        "id": "ecdsa-boot",
+        "num": "04",
+        "file": "04_Secure_Boot_with_ECDSA.md",
+        "title": "Secure Boot with ECDSA on STM32",
+        "brief": "End-to-end implementation: signing firmware in CI/CD with OpenSSL, verifying on-device with mbedTLS, protecting the public key with RDP, and adding anti-rollback via OTP fuses.",
+        "tags": ["Security", "Bootloader", "18 Sep 2023"]
+    },
+    {
+        "id": "autosar",
+        "num": "05",
+        "file": "05_AUTOSAR_Classic_CP.md",
+        "title": "AUTOSAR Classic CP - A Practical Introduction",
+        "brief": "How AUTOSAR's layered architecture, BSW stack, and RTE decouple application software from hardware in automotive ECUs - including the COM stack and UDS diagnostics.",
+        "tags": ["AUTOSAR", "Automotive", "02 Apr 2024"]
+    },
+    {
+        "id": "rust-embedded",
+        "num": "06",
+        "file": "06_Rust_on_Bare_Metal_ARM.md",
+        "title": "Rust on Bare-Metal ARM - First Impressions",
+        "brief": "Setting up a no_std Rust environment on STM32, writing an interrupt-driven UART driver with Embassy, and an honest comparison to C in terms of tooling and safety guarantees.",
+        "tags": ["Rust", "Embedded", "20 May 2024"]
+    },
+    {
+        "id": "dma-double-buffer",
+        "num": "07",
+        "file": "07_Zero_Copy_Audio_with_DMA.md",
+        "title": "Zero-Copy Audio with DMA Double Buffering",
+        "brief": "Using STM32 DMA double-buffer mode to stream 48 kHz I2S audio with no CPU involvement during transfer.",
+        "tags": ["DMA", "I2S", "Audio", "STM32", "12 Jul 2024"]
+    },
+    {
+        "id": "yocto-debug",
+        "num": "08",
+        "file": "08_Debugging_Yocto_Build_Failures.md",
+        "title": "Debugging Yocto Build Failures",
+        "brief": "A systematic approach to diagnosing recipe failures, dependency conflicts, and sstate cache invalidation in Yocto Kirkstone.",
+        "tags": ["Yocto", "Linux", "Build", "Debug", "03 Jun 2024"]
+    },
+    {
+        "id": "canfd-gateway",
+        "num": "09",
+        "file": "09_Building_a_CAN_FD_to_Ethernet_Gateway.md",
+        "title": "Building a CAN FD to Ethernet Gateway",
+        "brief": "Design decisions, timing analysis, and lessons learned from a production CAN FD to UDP gateway running at 5 Mb/s.",
+        "tags": ["CAN FD", "Ethernet", "Gateway", "STM32", "29 Aug 2024"]
+    }
+]

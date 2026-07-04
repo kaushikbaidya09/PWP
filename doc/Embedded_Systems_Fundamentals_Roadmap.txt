@@ -1,0 +1,148 @@
+EMBEDDED SYSTEMS FUNDAMENTALS ROADMAP
+======================================
+
+PHASE 1: CORE FOUNDATIONS (MUST KNOW)
+-------------------------------------
+
+1. MCU Boot Sequence: What Really Happens Before main()
+   - Reset
+   - Vector table
+   - Stack initialization
+   - Reset handler
+   - .data and .bss initialization
+   - Entering main()
+
+2. Memory Architecture: Understanding Flash, RAM, Stack, Heap and Memory Maps
+   - Flash memory
+   - SRAM
+   - EEPROM
+   - Memory map
+   - Stack
+   - Heap
+   - Memory regions
+
+3. CPU Execution Model: How a Microcontroller Executes Instructions
+   - Registers
+   - Program Counter
+   - Stack Pointer
+   - Fetch-Decode-Execute
+   - Function calls
+   - Return addresses
+
+4. Interrupts: How Embedded Systems React to Events
+   - Polling vs Interrupts
+   - ISR
+   - Interrupt priorities
+   - Latency
+   - Context saving
+
+5. Clock System Fundamentals: The Heartbeat of a Microcontroller
+   - Oscillators
+   - Crystal clocks
+   - PLL
+   - Clock tree
+   - Peripheral clocks
+
+PHASE 2: HOW EMBEDDED SYSTEMS ARE STRUCTURED
+--------------------------------------------
+
+6. Event-Driven Systems: The Core Philosophy of Embedded Design
+   - Events
+   - Triggers
+   - Reactive systems
+   - Event loops
+
+7. State Machines: The Most Important Embedded Design Pattern
+   - States
+   - Events
+   - Transitions
+   - FSM design
+
+8. Bare-Metal Architecture: Building Systems Without an RTOS
+   - Superloop
+   - Cooperative scheduling
+   - Event flags
+
+9. RTOS Fundamentals: Running Multiple Tasks Predictably
+   - Tasks
+   - Scheduling
+   - Context switching
+   - Priorities
+
+10. Concurrency and Synchronization
+    - Race conditions
+    - Mutexes
+    - Semaphores
+    - Deadlocks
+    - Priority inversion
+
+PHASE 3: HARDWARE INTERACTION
+-----------------------------
+
+11. GPIO Fundamentals: Understanding Digital Inputs and Outputs
+
+12. Timers and Counters: The Most Versatile Peripheral
+
+13. Analog Systems: ADCs, DACs and Real-World Signals
+
+14. DMA: Moving Data Without CPU Intervention
+
+PHASE 4: COMMUNICATION
+----------------------
+
+15. Serial Communication Fundamentals
+
+16. UART Explained
+
+17. SPI Explained
+
+18. I2C Explained
+
+19. CAN Bus Explained
+
+PHASE 5: RELIABILITY AND DEBUGGING
+----------------------------------
+
+20. Watchdog Timers: Designing Systems That Recover
+
+21. Fault Handling and Crash Analysis
+
+22. Embedded Debugging: Beyond printf()
+
+23. Memory Corruption and System Stability
+
+PHASE 6: ADVANCED FOUNDATIONS
+-----------------------------
+
+24. Linker Scripts Explained
+
+25. Bootloaders and Firmware Updates
+
+26. Power Management Fundamentals
+
+27. Embedded Security Fundamentals
+
+28. Firmware Architecture Patterns
+
+TOP 12 PRIORITY ARTICLES
+------------------------
+
+1. MCU Boot Sequence
+2. Memory Architecture
+3. CPU Execution Model
+4. Interrupts
+5. Clock System Fundamentals
+6. Event-Driven Systems
+7. State Machines
+8. Bare-Metal Architecture
+9. RTOS Fundamentals
+10. Concurrency and Synchronization
+11. DMA
+12. Linker Scripts
+
+GOAL
+----
+These topics form the conceptual backbone of embedded engineering.
+Once mastered, they provide the foundation needed to understand
+microcontrollers, RTOSes, communication protocols, debugging,
+firmware architecture, and advanced embedded system design.

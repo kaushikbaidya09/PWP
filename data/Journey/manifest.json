@@ -1,0 +1,58 @@
+[
+    {
+        "num": "01",
+        "file": "01_CS_Foundations.md",
+        "title": "CS Foundations",
+        "brief": "Data structures, algorithms, memory management, and C. Understanding pointers, stack vs heap, and compilation -- the bedrock for every hardware interaction.",
+        "tags": ["2015 - 2017", "C Programming", "Data Structures", "Memory Model", "Linux CLI"]
+    },
+    {
+        "num": "02",
+        "file": "02_Digital_Electronics_and_Logic_Design.md",
+        "title": "Digital Electronics & Logic Design",
+        "brief": "Logic gates, FSMs, combinational and sequential circuits, FPGA basics. The moment protocols became first principles rather than black boxes.",
+        "tags": ["2016 - 2017", "FSM Design", "VHDL Basics", "FPGA", "Oscilloscope"]
+    },
+    {
+        "num": "03",
+        "file": "03_Bare_Metal_MCU_Programming.md",
+        "title": "Bare Metal MCU Programming",
+        "brief": "STM32 register-level peripheral control -- GPIO, NVIC, DMA, ADC, PWM -- without HAL abstraction. Reading reference manuals became a daily practice.",
+        "tags": ["2017 - 2018", "STM32", "ARM Cortex-M", "DMA", "CMSIS"]
+    },
+    {
+        "num": "04",
+        "file": "04_Communication_Protocols.md",
+        "title": "Communication Protocols",
+        "brief": "UART, SPI, I2C, and CAN at hardware and software level -- frame structure, clock polarity, arbitration, error handling, and timing constraints.",
+        "tags": ["2018 - 2019", "UART / SPI", "I2C", "CAN 2.0A/B", "Logic Analyser"]
+    },
+    {
+        "num": "05",
+        "file": "05_RTOS_and_Firmware_Architecture.md",
+        "title": "RTOS & Firmware Architecture",
+        "brief": "FreeRTOS task management, semaphores, queues, mutexes -- and designing deterministic firmware architecture with clear layer separation and API contracts.",
+        "tags": ["2019 - 2021", "FreeRTOS", "ISR Design", "Firmware APIs", "HAL Design"]
+    },
+    {
+        "num": "06",
+        "file": "06_Embedded_Linux_and_Device_Drivers.md",
+        "title": "Embedded Linux & Device Drivers",
+        "brief": "Kernel module development, platform device drivers, device tree bindings, Yocto and Buildroot. Kernel patch accepted in Linux 6.2.",
+        "tags": ["2021 - 2023", "Linux Kernel", "Device Tree", "Yocto", "GDB / KGDB"]
+    },
+    {
+        "num": "07",
+        "file": "07_Automotive_Software_and_AUTOSAR.md",
+        "title": "Automotive Software & AUTOSAR",
+        "brief": "AUTOSAR Classic and Adaptive ECU development, CAN matrix analysis, UDS diagnostics, ISO 26262 functional safety. Currently integrating BSW for an ASIL-B gateway ECU.",
+        "tags": [
+            "2023 - Present",
+            "AUTOSAR Classic",
+            "AUTOSAR Adaptive",
+            "ISO 26262",
+            "UDS",
+            "MISRA C"
+        ]
+    }
+]

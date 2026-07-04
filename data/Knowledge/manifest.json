@@ -1,0 +1,226 @@
+[
+    {
+        "id": "mcu-boot-seq",
+        "num": "01",
+        "file": "01_MCU_Boot_Sequence.md",
+        "title": "MCU Boot Sequence What Really Happens Before main()",
+        "brief": "What the processor does after reset before main() -- vector table, Reset Handler, .data copy, and .bss zeroing.",
+        "tags": ["Startup", "Cortex-M", "Linker", "Reset"]
+    },
+    {
+        "id": "memory-architecture",
+        "num": "02",
+        "file": "02_Memory_Architecture.md",
+        "title": "Memory Architecture: Understanding Flash, RAM, Stack, Heap and Memory Maps",
+        "brief": "You have just written your first firmware for an STM32F4. The code compiles cleanly, the linker reports no errors, and you flash it to the board. The device resets, the LED blinks twice, and then the system locks up h...",
+        "tags": ["Flash", "SRAM", "Memory Map", "Stack"]
+    },
+    {
+        "id": "cpu-execution-model",
+        "num": "03",
+        "file": "03_CPU_Execution_Model.md",
+        "title": "CPU Execution Model: How a Cortex-M Processor Executes Instructions",
+        "brief": "A firmware engineer is chasing a hard fault that appears only at 168 MHz and vanishes when the debugger is attached. The stack frame looks corrupted, the LR value points nowhere meaningful, and the fault address is in...",
+        "tags": ["Pipeline", "Cortex-M", "Registers", "ABI"]
+    },
+    {
+        "id": "interrupts",
+        "num": "04",
+        "file": "04_Interrupts.md",
+        "title": "Interrupts: How Embedded Systems React to Events",
+        "brief": "Imagine you are building a safety system for an industrial press. A physical emergency stop button must halt the machine within 2 milliseconds of being pressed. Your main loop is busy running a PID controller, updatin...",
+        "tags": ["NVIC", "ISR", "Priority", "Latency"]
+    },
+    {
+        "id": "clock-system-fundamentals",
+        "num": "05",
+        "file": "05_Clock_System_Fundamentals.md",
+        "title": "Clock System Fundamentals: The Heartbeat of a Microcontroller",
+        "brief": "You power up your STM32F4 board, flash your firmware, and the UART output is garbage. The baud rate is off by a factor of two, timers fire at the wrong intervals, and SPI transactions corrupt data. You check your code...",
+        "tags": ["PLL", "Prescaler", "Oscillator", "HSI"]
+    },
+    {
+        "id": "event-driven-systems",
+        "num": "06",
+        "file": "06_Event_Driven_Systems.md",
+        "title": "Event Driven Systems",
+        "brief": "Imagine you are writing firmware for a battery-powered sensor node. The node reads a temperature sensor every 10 seconds, blinks an LED on a valid reading, and transmits over UART when a threshold is crossed. A junior...",
+        "tags": ["Events", "Callbacks", "Non-blocking"]
+    },
+    {
+        "id": "state-machines",
+        "num": "07",
+        "file": "07_State_Machines.md",
+        "title": "State Machines: The Most Important Embedded Design Pattern",
+        "brief": "You are three weeks into a project. The firmware compiles, the hardware is on your bench, and everything works fine during basic testing. Then your manager hands you a bug report: the device locks up when the user pre...",
+        "tags": ["FSM", "State Machine", "UML", "Transitions"]
+    },
+    {
+        "id": "bare-metal-architecture",
+        "num": "08",
+        "file": "08_Bare_Metal_Architecture.md",
+        "title": "Bare-Metal Architecture: Building Systems Without an RTOS",
+        "brief": "You are three weeks into a new embedded project. The hardware is a small STM32F030 microcontroller driving an LED matrix, reading four buttons, and sending periodic UART status messages to a host. Your manager suggest...",
+        "tags": ["HAL", "Architecture", "Bare-metal"]
+    },
+    {
+        "id": "rtos-fundamentals",
+        "num": "09",
+        "file": "09_RTOS_Fundamentals.md",
+        "title": "RTOS Fundamentals: Running Multiple Tasks Predictably",
+        "brief": "Imagine you are debugging a motor controller that also needs to update a display, respond to button presses, and send telemetry over UART. You write a big loop, carefully ordering each operation, tuning delays, and pr...",
+        "tags": ["RTOS", "FreeRTOS", "Scheduler", "Tasks"]
+    },
+    {
+        "id": "concurrency-and-synchronization",
+        "num": "10",
+        "file": "10_Concurrency_and_Synchronization.md",
+        "title": "Concurrency and Synchronization in Embedded Firmware",
+        "brief": "Imagine you have a motor controller running on an STM32F4. A high-priority interrupt fires every millisecond to update a PID output value. Your main-loop task reads that same value to log it over UART. In testing, eve...",
+        "tags": ["Mutex", "Semaphore", "Race Condition", "Critical Section"]
+    },
+    {
+        "id": "gpio-fundamentals",
+        "num": "11",
+        "file": "11_GPIO_Fundamentals.md",
+        "title": "GPIO Fundamentals: Understanding Digital Inputs and Outputs",
+        "brief": "You are building a firmware module for a new product. The schematic arrives and you are told: \"The LED is on PA5, the button is on PC13.\" You open the datasheet, find the GPIO section, and suddenly there are mode regi...",
+        "tags": ["GPIO", "Registers", "Pull-Up", "Open-Drain"]
+    },
+    {
+        "id": "timers-and-counters",
+        "num": "12",
+        "file": "12_Timers_and_Counters.md",
+        "title": "Watchdog Timers: Designing Systems That Recover",
+        "brief": "Imagine a medical infusion pump deployed in a hospital. Three weeks after installation, a nurse notices the display has frozen. The pump is no longer delivering medication. Nobody pressed a button, no alarm fired, and...",
+        "tags": ["Timers", "PWM", "Capture", "Overflow"]
+    },
+    {
+        "id": "analog-systems",
+        "num": "13",
+        "file": "13_Analog_Systems.md",
+        "title": "Analog Systems: ADCs, DACs and Real-World Signals",
+        "brief": "Your firmware reads a sensor value and returns 2047 at room temperature. You tweak the gain resistor, recompile, and now it returns 2048. Was that a 0.5 degree change or 50 degrees? You have no idea, because you skipp...",
+        "tags": ["ADC", "DAC", "Sampling", "Signal"]
+    },
+    {
+        "id": "dma",
+        "num": "14",
+        "file": "14_DMA.md",
+        "title": "DMA: Moving Data Without CPU Intervention",
+        "brief": "You are building a data acquisition system. Every millisecond, an ADC samples twelve channels at 1 MSPS and your firmware must store each result in a buffer for later processing. You write the obvious loop: poll the A...",
+        "tags": ["DMA", "Transfer", "Circular Buffer"]
+    },
+    {
+        "id": "serial-communication-fundamentals",
+        "num": "15",
+        "file": "15_Serial_Communication_Fundamentals.md",
+        "title": "Serial Communication Fundamentals",
+        "brief": "You have a microcontroller that reads a temperature sensor, and you need to send that reading to a display module on the other side of a PCB. The sensor speaks a different voltage, runs on its own clock, and was made ...",
+        "tags": ["UART", "SPI", "I2C", "Protocols"]
+    },
+    {
+        "id": "uart-explained",
+        "num": "16",
+        "file": "16_UART_Explained.md",
+        "title": "UART Explained: Frame Format, Baud Rate Generation, FIFOs, Flow Control, and Signal Levels",
+        "brief": "You are three days into debugging a new board. The GPS module is connected, power is clean, and the firmware compiles without errors. But the UART receive buffer fills with garbage. You swap the TX and RX lines. Still...",
+        "tags": ["UART", "Baud Rate", "Framing", "RS-232"]
+    },
+    {
+        "id": "spi-explained",
+        "num": "17",
+        "file": "17_SPI_Explained.md",
+        "title": "SPI Explained: Serial Peripheral Interface for Embedded Systems Engineers",
+        "brief": "Your accelerometer is returning garbage. You configured the I2C address correctly, wired everything up, and the datasheet says the sensor is at 0x1D -- but the readings make no sense. Then you swap to a different sens...",
+        "tags": ["SPI", "MOSI", "MISO", "Clock Polarity"]
+    },
+    {
+        "id": "i2c-explained",
+        "num": "18",
+        "file": "18_I2C_Explained.md",
+        "title": "I2C Explained: The Two-Wire Protocol That Runs Your Embedded World",
+        "brief": "You are debugging a sensor board at 11 PM. The accelerometer is supposed to be responding, but your firmware reads back 0xFF on every register access. The bus looks clean on the oscilloscope -- clock is toggling, data...",
+        "tags": ["I2C", "ACK", "Address", "Pull-Up"]
+    },
+    {
+        "id": "can-bus-explained",
+        "num": "19",
+        "file": "19_CAN_Bus_Explained.md",
+        "title": "CAN Bus Explained: Differential Signaling, Arbitration, Frames, and Fault Confinement",
+        "brief": "Picture a modern car. Under the hood, an engine control unit monitors fuel injection timing and exhaust temperature. On the dashboard, the instrument cluster reads engine RPM, coolant temperature, and vehicle speed. I...",
+        "tags": ["CAN", "Arbitration", "Frame", "Differential"]
+    },
+    {
+        "id": "watchdog-timers",
+        "num": "20",
+        "file": "20_Watchdog_Timers.md",
+        "title": "Watchdog Timers: Designing Systems That Recover",
+        "brief": "Imagine a medical infusion pump deployed in a hospital. Three weeks after installation, a nurse notices the display has frozen. The pump is no longer delivering medication. Nobody pressed a button, no alarm fired, and...",
+        "tags": ["Watchdog", "IWDG", "WWDG", "Reset"]
+    },
+    {
+        "id": "fault-handling-and-crash-analysis",
+        "num": "21",
+        "file": "21_Fault_Handling_and_Crash_Analysis.md",
+        "title": "Fault Handling and Crash Analysis: Diagnosing Hard Faults on Cortex-M",
+        "brief": "A production batch of industrial sensor nodes had been running flawlessly on the bench for six weeks. Three days after deployment in the field, units began resetting spontaneously. No error was printed to UART. The wa...",
+        "tags": ["HardFault", "CFSR", "Cortex-M", "Debug"]
+    },
+    {
+        "id": "embedded-debugging",
+        "num": "22",
+        "file": "22_Embedded_Debugging.md",
+        "title": "Embedded Debugging: Beyond printf()",
+        "brief": "You are three days into debugging a timing-sensitive communication fault on a production STM32F4 board. The UART packet occasionally corrupts on byte 5. You added a printf() call to log the buffer contents just before...",
+        "tags": ["JTAG", "SWD", "GDB", "Breakpoints"]
+    },
+    {
+        "id": "memory-corruption-and-system-stability",
+        "num": "23",
+        "file": "23_Memory_Corruption_and_System_Stability.md",
+        "title": "Memory Corruption and System Stability in Embedded Systems",
+        "brief": "You are three weeks from shipping a medical infusion pump firmware. The device has passed functional testing. Then, during a 72-hour stress run, the pump locks up. No error code. No obvious trigger. The watchdog fires...",
+        "tags": ["Corruption", "Overflow", "Heap", "Stability"]
+    },
+    {
+        "id": "linker-scripts-explained",
+        "num": "24",
+        "file": "24_Linker_Scripts_Explained.md",
+        "title": "Linker Scripts Explained: How Your Firmware Gets Placed in Memory",
+        "brief": "You have written a perfectly valid embedded C program. It compiles without warnings, your logic is sound, and yet when you flash the device the microcontroller either does nothing, resets immediately, or corrupts its ...",
+        "tags": ["Linker", ".text", ".data", ".bss"]
+    },
+    {
+        "id": "bootloaders-and-firmware-updates",
+        "num": "25",
+        "file": "25_Bootloaders_and_Firmware_Updates.md",
+        "title": "Bootloaders and Firmware Updates: Managing Code in Flash at Runtime",
+        "brief": "Imagine you have shipped 10,000 IoT sensors to industrial sites across three continents. Three months later, your team discovers a critical bug in the sensor calibration logic. Without a bootloader and firmware update...",
+        "tags": ["Bootloader", "OTA", "Flash", "Firmware"]
+    },
+    {
+        "id": "power-management-fundamentals",
+        "num": "26",
+        "file": "26_Power_Management_Fundamentals.md",
+        "title": "Power Management Fundamentals: Sleep Modes, Clock Gating, and Dynamic Voltage Scaling",
+        "brief": "Your product ships with a CR2032 coin cell rated for one year of field operation. Three months after deployment, the operations team starts filing support tickets: batteries are dying in six weeks. The hardware is cor...",
+        "tags": ["Sleep", "Clock Gating", "Power", "LPM"]
+    },
+    {
+        "id": "embedded-security-fundamentals",
+        "num": "27",
+        "file": "27_Embedded_Security_Fundamentals.md",
+        "title": "Embedded Security Fundamentals: Protecting Your Firmware from the Ground Up",
+        "brief": "A few years ago, a major home router vendor shipped millions of devices with a UART debug port left active on the PCB. Anyone with a $3 USB-to-serial adapter and basic Linux knowledge could attach to that port, interr...",
+        "tags": ["Security", "TrustZone", "Crypto", "Secure Boot"]
+    },
+    {
+        "id": "firmware-architecture-patterns",
+        "num": "28",
+        "file": "28_Firmware_Architecture_Patterns.md",
+        "title": "Firmware Architecture Patterns: Structuring Embedded Software for Scale",
+        "brief": "You have just been handed a codebase for a motor drive controller. The original developer left the company. There are no comments, no header files with meaningful declarations, and a single 3,000-line main.c that read...",
+        "tags": ["HAL", "Driver", "BSP", "Architecture"]
+    }
+]

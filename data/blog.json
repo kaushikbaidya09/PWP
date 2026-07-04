@@ -1,0 +1,22 @@
+{
+    "meta": {
+        "title": "Blog",
+        "description": "Embedded systems field notes - deep dives on protocols, RTOS patterns, security, and Linux BSP work."
+    },
+    "pageLeft": {
+        "titleParts": ["Field", "Notes"],
+        "sub": "Technical Writing"
+    },
+    "hero": {
+        "eyebrow": "Field Notes",
+        "title": "Blog",
+        "desc": "Deep dives on embedded protocols, RTOS patterns, Linux BSP, and security - written from production experience. Click any post to read the full article."
+    },
+    "section": {
+        "label": "Field Notes"
+    },
+    "detail": {
+        "breadcrumb": "Blog",
+        "initialTitle": "Blog Post"
+    }
+}

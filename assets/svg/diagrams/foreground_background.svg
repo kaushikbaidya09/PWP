@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 800 570" width="800" height="570">
+  <defs>
+    <style>text{font-family:'DM Sans',ui-sans-serif,system-ui,sans-serif;font-weight:500}</style>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="800" height="570" fill="#ffffff"/>
+  <rect x="80" y="30" width="640" height="60" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="400" y="60" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="13">HARDWARE EVENTS  (Timer overflow · UART Rx · GPIO edge · ADC complete · ...)</text>
+  <line x1="400" y1="90" x2="400" y2="170" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="400" y="121" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">interrupt fires / preempts</text>
+  <rect x="80" y="170" width="640" height="120" rx="8" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>
+  <text x="400" y="200" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">FOREGROUND: Interrupt Service Routines</text>
+  <text x="400" y="220" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">— minimal work: read register, set flag, push to buffer</text>
+  <text x="400" y="240" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">— sets event flags visible to background loop</text>
+  <text x="400" y="260" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">— returns control to wherever background was running</text>
+  <line x1="400" y1="290" x2="400" y2="380" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="400" y="326" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">ISR sets flag, returns</text>
+  <rect x="80" y="380" width="640" height="160" rx="8" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+  <text x="400" y="400" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">BACKGROUND: The Superloop</text>
+  <text x="400" y="440" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">while(1) {</text>
+  <text x="400" y="460" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">    module_buttons_run();     module_sensor_run();</text>
+  <text x="400" y="480" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">    module_comms_run();       module_display_run();</text>
+  <text x="400" y="500" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">    module_fault_run();</text>
+  <text x="400" y="520" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">}</text>
+</svg>

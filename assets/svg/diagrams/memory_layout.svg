@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 700 680" width="700" height="680">
+  <defs>
+    <style>text{font-family:'DM Sans',ui-sans-serif,system-ui,sans-serif;font-weight:500}</style>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="700" height="680" fill="#ffffff"/>
+  <rect x="80" y="20" width="540" height="80" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="350" y="50" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="13">FLASH (Read-Only Code)   .text · .rodata</text>
+  <text x="350" y="70" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="13">MPU: read + execute only — write faults</text>
+  <rect x="80" y="115" width="540" height="70" rx="8" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+  <text x="350" y="150" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">SRAM — .data (initialized globals)   .bss (zero-initialized globals)</text>
+  <rect x="80" y="200" width="540" height="70" rx="8" fill="#fef3c7" stroke="#92400e" stroke-width="2"/>
+  <text x="350" y="235" text-anchor="middle" dominant-baseline="middle" fill="#78350f" font-size="13">Heap  (dynamic allocation)   canary at heap boundary</text>
+  <rect x="80" y="285" width="540" height="70" rx="8" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>
+  <text x="350" y="320" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">Task A Stack  [CANARY at bottom]   MPU: no-access below canary</text>
+  <rect x="80" y="370" width="540" height="70" rx="8" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>
+  <text x="350" y="405" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">Task B Stack  [CANARY at bottom]   MPU: no-access below canary</text>
+  <rect x="80" y="455" width="540" height="70" rx="8" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>
+  <text x="350" y="490" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="13">ISR / Main Stack (MSP)   [CANARY at bottom]</text>
+  <rect x="80" y="540" width="540" height="80" rx="8" fill="#cffafe" stroke="#0e7490" stroke-width="2"/>
+  <text x="350" y="570" text-anchor="middle" dominant-baseline="middle" fill="#164e63" font-size="13">Peripheral Registers (Memory-Mapped)</text>
+  <text x="350" y="590" text-anchor="middle" dominant-baseline="middle" fill="#164e63" font-size="13">MPU: privileged access only from user tasks</text>
+</svg>

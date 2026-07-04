@@ -1,0 +1,42 @@
+[
+    {
+        "id": "can-gateway",
+        "num": "01",
+        "file": "01_CAN_to_Ethernet_Gateway.md",
+        "title": "CAN-to-Ethernet Gateway",
+        "brief": "Dual-network bridge translating CAN FD frames to UDP/IP with deterministic latency under 500 µs at 10 000 frames/s on STM32H7 + FreeRTOS.",
+        "tags": ["CAN FD", "FreeRTOS", "STM32H7", "LWIP"]
+    },
+    {
+        "id": "linux-bsp",
+        "num": "02",
+        "file": "02_Linux_BSP_for_iMX8.md",
+        "title": "Linux BSP for Custom i.MX8 Board",
+        "brief": "Yocto-based board support package with custom device tree, SPI display driver, out-of-tree CAN FD module, and A/B OTA update via U-Boot.",
+        "tags": ["Yocto", "i.MX8", "Device Tree", "Kernel Module"]
+    },
+    {
+        "id": "ota-boot",
+        "num": "03",
+        "file": "03_OTA_Bootloader_with_ECDSA.md",
+        "title": "OTA Bootloader with ECDSA Verification",
+        "brief": "Dual-bank STM32L5 bootloader with elliptic-curve firmware authentication, OTP-based anti-rollback, and factory recovery mode over UART/CAN.",
+        "tags": ["STM32", "ECDSA", "mbedTLS", "Security"]
+    },
+    {
+        "id": "bldc-motor",
+        "num": "04",
+        "file": "04_BLDC_Motor_Controller.md",
+        "title": "BLDC Motor Controller",
+        "brief": "FOC-based sensorless drive with current-mode PI running at 20 kHz PWM on STM32G4, achieving 0–6000 RPM with CMSIS-DSP math acceleration.",
+        "tags": ["FOC", "STM32G4", "CMSIS-DSP", "ADC"]
+    },
+    {
+        "id": "iot-gateway",
+        "num": "05",
+        "file": "05_Industrial_IoT_Gateway.md",
+        "title": "Industrial IoT Gateway",
+        "brief": "Edge gateway aggregating Modbus RTU, CAN, and 4–20 mA sensor data to AWS IoT Core via MQTT over LTE-M with SQLite local buffering.",
+        "tags": ["Modbus", "AWS IoT", "LTE-M", "MQTT"]
+    }
+]

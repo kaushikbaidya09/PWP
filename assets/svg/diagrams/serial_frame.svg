@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1080 300" width="1080" height="300">
+  <defs>
+    <style>text{font-family:'DM Sans',ui-sans-serif,system-ui,sans-serif;font-weight:500}</style>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="1080" height="300" fill="#ffffff"/>
+  <rect x="20" y="130" width="150" height="90" rx="8" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+  <text x="95" y="165" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">CPU / DMA</text>
+  <text x="95" y="185" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">TRANSMITTER</text>
+  <line x1="170" y1="175" x2="220" y2="175" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="195" y="166" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">parallel</text>
+  <rect x="220" y="130" width="170" height="90" rx="8" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>
+  <text x="305" y="156" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">TX Shift Register</text>
+  <text x="305" y="175" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">(Serialize</text>
+  <text x="305" y="194" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">parallel → serial)</text>
+  <line x1="390" y1="175" x2="440" y2="175" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="415" y="166" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">serial bits</text>
+  <rect x="440" y="60" width="200" height="230" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="540" y="118" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">PHYSICAL WIRE(S)</text>
+  <text x="540" y="156" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">Sync:</text>
+  <text x="540" y="175" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">DATA + CLOCK lines</text>
+  <text x="540" y="213" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">Async:</text>
+  <text x="540" y="232" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="12">DATA line only</text>
+  <line x1="640" y1="175" x2="690" y2="175" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="665" y="166" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">serial bits</text>
+  <rect x="690" y="130" width="170" height="90" rx="8" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>
+  <text x="775" y="156" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">RX Shift Register</text>
+  <text x="775" y="175" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">(Deserialize</text>
+  <text x="775" y="194" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="12">serial → parallel)</text>
+  <line x1="860" y1="175" x2="910" y2="175" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="885" y="166" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">parallel</text>
+  <rect x="910" y="130" width="150" height="90" rx="8" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+  <text x="985" y="165" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">CPU / DMA</text>
+  <text x="985" y="185" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">RECEIVER</text>
+</svg>

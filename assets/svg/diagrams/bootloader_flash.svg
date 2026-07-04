@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 760 780" width="760" height="780">
+  <defs>
+    <style>text{font-family:'DM Sans',ui-sans-serif,system-ui,sans-serif;font-weight:500}</style>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="760" height="780" fill="#ffffff"/>
+  <rect x="230" y="30" width="280" height="60" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="370" y="60" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="13">POWER ON / RESET</text>
+  <line x1="370" y1="90" x2="370" y2="180" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="230" y="180" width="280" height="80" rx="8" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>
+  <text x="370" y="210" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="13">BOOTLOADER</text>
+  <text x="370" y="230" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="13">(protected flash — never updated)</text>
+  <line x1="370" y1="260" x2="370" y2="340" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="230" y="340" width="280" height="70" rx="8" fill="#fef3c7" stroke="#92400e" stroke-width="2"/>
+  <text x="370" y="375" text-anchor="middle" dominant-baseline="middle" fill="#78350f" font-size="13">Update flag set?
+New image valid?</text>
+  <line x1="310" y1="415" x2="150" y2="510" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="230" y="454" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">YES</text>
+  <line x1="430" y1="415" x2="590" y2="510" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="510" y="454" text-anchor="middle" dominant-baseline="middle" fill="#9ca3af" font-size="11">NO (valid app)</text>
+  <rect x="40" y="510" width="220" height="110" rx="8" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>
+  <text x="150" y="535" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">FIRMWARE UPDATE</text>
+  <text x="150" y="555" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">— erase active bank</text>
+  <text x="150" y="575" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">— copy / swap</text>
+  <text x="150" y="595" text-anchor="middle" dominant-baseline="middle" fill="#7f1d1d" font-size="13">— verify CRC</text>
+  <rect x="470" y="510" width="220" height="110" rx="8" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+  <text x="580" y="535" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">JUMP TO APP</text>
+  <text x="580" y="555" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">— set Stack Pointer</text>
+  <text x="580" y="575" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">— jump to reset</text>
+  <text x="580" y="595" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">   handler</text>
+  <line x1="150" y1="620" x2="150" y2="700" stroke="#6b7280" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="40" y="700" width="220" height="70" rx="8" fill="#dcfce7" stroke="#166534" stroke-width="2"/>
+  <text x="150" y="725" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="13">Boot new image</text>
+  <text x="150" y="745" text-anchor="middle" dominant-baseline="middle" fill="#14532d" font-size="13">(rollback if verify fails)</text>
+</svg>

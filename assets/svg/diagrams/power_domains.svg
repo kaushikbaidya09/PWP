@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 760 430" width="760" height="430">
+  <defs>
+    <style>text{font-family:'DM Sans',ui-sans-serif,system-ui,sans-serif;font-weight:500}</style>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect width="760" height="430" fill="#ffffff"/>
+  <rect x="30" y="30" width="700" height="50" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="380" y="55" text-anchor="middle" dominant-baseline="middle" fill="#1e3a8a" font-size="15">VDD POWER DOMAIN</text>
+  <rect x="70" y="120" width="190" height="70" rx="8" fill="#ede9fe" stroke="#5b21b6" stroke-width="2"/>
+  <text x="165" y="145" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="13">CPU</text>
+  <text x="165" y="165" text-anchor="middle" dominant-baseline="middle" fill="#4c1d95" font-size="13">Cortex-M</text>
+  <rect x="290" y="120" width="190" height="70" rx="8" fill="#d1fae5" stroke="#065f46" stroke-width="2"/>
+  <text x="385" y="155" text-anchor="middle" dominant-baseline="middle" fill="#064e3b" font-size="13">SRAM1  /  SRAM2</text>
+  <rect x="510" y="120" width="190" height="70" rx="8" fill="#cffafe" stroke="#0e7490" stroke-width="2"/>
+  <text x="605" y="145" text-anchor="middle" dominant-baseline="middle" fill="#164e63" font-size="13">Peripherals</text>
+  <text x="605" y="165" text-anchor="middle" dominant-baseline="middle" fill="#164e63" font-size="13">AHB / APB</text>
+  <rect x="30" y="250" width="700" height="50" rx="8" fill="#fef3c7" stroke="#92400e" stroke-width="2"/>
+  <text x="380" y="275" text-anchor="middle" dominant-baseline="middle" fill="#78350f" font-size="14">ALWAYS-ON DOMAIN  (VBAT / VSW)</text>
+  <rect x="70" y="340" width="150" height="70" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <text x="145" y="375" text-anchor="middle" dominant-baseline="middle" fill="#111827" font-size="13">RTC</text>
+  <rect x="250" y="340" width="150" height="70" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <text x="325" y="375" text-anchor="middle" dominant-baseline="middle" fill="#111827" font-size="13">LSE</text>
+  <rect x="430" y="340" width="270" height="70" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <text x="565" y="375" text-anchor="middle" dominant-baseline="middle" fill="#111827" font-size="13">Backup Registers</text>
+</svg>

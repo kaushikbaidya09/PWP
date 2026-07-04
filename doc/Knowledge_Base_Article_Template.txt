@@ -1,0 +1,192 @@
+KNOWLEDGE BASE ARTICLE TEMPLATE
+===============================
+
+PURPOSE
+-------
+This template is designed for creating deep technical knowledge base articles
+that teach conceptual understanding, engineering intuition, practical insights,
+and real-world applications. The writing style should feel like a senior engineer
+mentoring a junior engineer rather than traditional documentation.
+
+TITLE
+-----
+Use a title that clearly communicates both the topic and the practical question it answers.
+
+INTRODUCTION
+------------
+- Open with a problem, observation, or real-world scenario.
+- Avoid starting with textbook definitions.
+- Explain why the topic exists and why engineers should care.
+- End with: "By the end of this article..."
+
+Writing Goal:
+Create curiosity before teaching details.
+
+THE FUNDAMENTAL PROBLEM
+-----------------------
+Before explaining the solution, explain the problem.
+
+Questions:
+- What challenge exists?
+- Why is the obvious approach insufficient?
+- What limitations drove the creation of this concept?
+
+Writing Goal:
+Help readers understand WHY the concept exists.
+
+THE BIG PICTURE
+---------------
+Provide the highest-level view possible.
+
+Show:
+- Overall flow
+- System interaction
+- Architectural position
+- Major components involved
+
+Use:
+- Flow diagrams
+- Architecture diagrams
+- Sequence diagrams
+
+Writing Goal:
+Create a mental map before diving deeper.
+
+KEY CONCEPTS AND TERMINOLOGY
+----------------------------
+Introduce the core vocabulary required for the topic.
+
+Each term should be explained, not merely defined.
+
+Writing Goal:
+Give readers the language needed to understand later sections.
+
+HOW IT WORKS
+------------
+This is the heart of the article.
+
+Walk through the process sequentially:
+
+STEP 1
+STEP 2
+STEP 3
+...
+
+Each step should explain:
+- What happens
+- Why it happens
+- What hardware is involved
+- What software is involved
+
+Writing Goal:
+Allow readers to mentally simulate the system.
+
+UNDER THE HOOD
+--------------
+Explain internal behavior.
+
+Focus on:
+- CPU behavior
+- Memory behavior
+- Hardware mechanisms
+- Timing implications
+- Register-level concepts
+
+Writing Goal:
+Move beyond surface-level understanding.
+
+REAL-WORLD APPLICATIONS
+-----------------------
+Show how the concept appears in actual products.
+
+Examples:
+- Automotive systems
+- Consumer electronics
+- Industrial automation
+- Medical devices
+- Aerospace systems
+- IoT products
+
+Writing Goal:
+Connect theory to engineering practice.
+
+COMMON MISTAKES
+---------------
+Discuss:
+- Incorrect assumptions
+- Design mistakes
+- Configuration errors
+- Architectural mistakes
+
+Writing Goal:
+Prevent common failures before they occur.
+
+DEBUGGING AND TROUBLESHOOTING
+-----------------------------
+Structure issues as:
+
+Symptom
+Possible Cause
+Investigation Method
+Resolution
+
+Writing Goal:
+Help readers solve real problems.
+
+DESIGN CONSIDERATIONS AND BEST PRACTICES
+----------------------------------------
+Discuss:
+- Performance
+- Reliability
+- Scalability
+- Power consumption
+- Safety
+- Maintainability
+
+Explain WHY each recommendation exists.
+
+Writing Goal:
+Teach engineering judgment.
+
+EXPERT NOTES
+------------
+The most valuable section.
+
+Examples:
+- What junior engineers frequently misunderstand
+- What causes problems in production systems
+- What textbooks often omit
+- What experienced engineers pay attention to
+
+Writing Goal:
+Make readers feel they are learning from someone who has built real systems.
+
+SUMMARY
+-------
+Summarize the article in narrative form.
+
+Answer:
+- What did we learn?
+- Why does it matter?
+- What mental model should readers retain?
+
+RELATED TOPICS
+--------------
+Prerequisites:
+Topics that should be understood first.
+
+Next Topics:
+Recommended continuation of the learning journey.
+
+GLOBAL WRITING GUIDELINES
+-------------------------
+1. Avoid textbook definitions at the start.
+2. Always explain the problem before the solution.
+3. Use storytelling where possible.
+4. Teach cause-and-effect relationships.
+5. Focus on mental models, not memorization.
+6. Use diagrams heavily for architecture and flow topics.
+7. Include expert insights not easily found in vendor documentation.
+8. Write as a senior engineer mentoring a junior engineer.
+9. Prioritize understanding over completeness.
+10. Build intuition before implementation details.

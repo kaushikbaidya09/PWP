@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-svg-base="../assets/svg/">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Loading...</title>
+        <meta name="description" content="" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../assets/css/main.css" />
+    </head>
+    <body>
+        <div class="page-frame" id="page-frame">
+            <div class="bg-grid" aria-hidden="true"></div>
+
+            <!-- ─── NAVIGATION ──────────────────────────────────────────────────────── -->
+            <nav id="nav" class="nav" role="navigation" aria-label="Main navigation">
+                <div class="nav__inner container">
+                    <ul class="nav__links">
+                        <li>
+                            <a href="../index.html" class="nav__link" data-nav="about"
+                                >Loading...</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="list.html?section=projects"
+                                class="nav__link"
+                                data-nav="projects"
+                                >Loading...</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="list.html?section=knowledge"
+                                class="nav__link"
+                                data-nav="knowledge"
+                                >Loading...</a
+                            >
+                        </li>
+                    </ul>
+                    <a href="../index.html" class="nav__logo" data-nav="about" aria-label="Home">
+                        <span class="nav__logo-name">Loading...</span>
+                    </a>
+                    <div class="nav__right">
+                        <ul class="nav__links">
+                            <li>
+                                <a href="list.html?section=blog" class="nav__link" data-nav="blog"
+                                    >Loading...</a
+                                >
+                            </li>
+                            <li>
+                                <a href="contact.html" class="nav__link" data-nav="contact"
+                                    >Loading...</a
+                                >
+                            </li>
+                        </ul>
+                        <div class="nav__actions">
+                            <button
+                                class="theme-toggle"
+                                id="theme-toggle"
+                                aria-label="Toggle colour theme"
+                            >
+                                <svg class="icon-sun" width="18" height="18" aria-hidden="true">
+                                    <use href="#icon-sun"></use>
+                                </svg>
+                                <svg class="icon-moon" width="18" height="18" aria-hidden="true">
+                                    <use href="#icon-moon"></use>
+                                </svg>
+                            </button>
+                            <a href="contact.html" class="btn btn--sm btn--gray" data-nav-cta
+                                >Loading...</a
+                            >
+                        </div>
+                    </div>
+                    <button class="nav__detail-back" id="nav-detail-back" aria-label="Close detail">
+                        <svg width="16" height="16" aria-hidden="true">
+                            <use href="#icon-back"></use>
+                        </svg>
+                        <span class="nav__detail-back-label">Back</span>
+                    </button>
+                    <span class="nav__detail-title" id="nav-detail-title"></span>
+                    <button
+                        class="nav__burger"
+                        id="nav-burger"
+                        aria-label="Toggle menu"
+                        aria-expanded="false"
+                    >
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+                <div class="nav__dropdown" id="nav-dropdown">
+                    <a href="../index.html" class="nav__link" data-nav="about">Loading...</a>
+                    <a href="list.html?section=projects" class="nav__link" data-nav="projects"
+                        >Loading...</a
+                    >
+                    <a href="list.html?section=knowledge" class="nav__link" data-nav="knowledge"
+                        >Loading...</a
+                    >
+                    <a href="list.html?section=blog" class="nav__link" data-nav="blog"
+                        >Loading...</a
+                    >
+                    <a href="contact.html" class="nav__link" data-nav="contact">Loading...</a>
+                </div>
+            </nav>
+
+            <!-- ─── SPLIT LAYOUT ───────────────────────────────────────────────────── -->
+            <div class="page-body">
+                <!-- Left decorative panel -->
+                <div class="page-left" aria-hidden="true">
+                    <p class="page-left__title">Loading...</p>
+                    <p class="page-left__sub">Loading...</p>
+                </div>
+
+                <!-- Right scrollable content -->
+                <div class="page-right page-right--wide" id="page-right">
+                    <!-- ─── PAGE HERO ─────────────────────────────────────────────────── -->
+                    <section class="section page-hero">
+                        <div class="container">
+                            <!-- is-visible pre-set: hero is always above the fold -->
+                            <div data-reveal class="is-visible">
+                                <span class="page-hero__eyebrow">Loading...</span>
+                                <h1 class="page-hero__title">Loading...</h1>
+                                <p class="page-hero__desc">Loading...</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ─── CARD LIST ─────────────────────────────────────────────────── -->
+                    <section class="section page-list">
+                        <div class="container">
+                            <div class="section-header" data-reveal>
+                                <h2 class="section__label">Loading...</h2>
+                                <div class="layout-toggle">
+                                    <button
+                                        class="layout-btn"
+                                        data-layout="list"
+                                        aria-label="List view"
+                                        title="List view"
+                                    >
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use href="#icon-list"></use>
+                                        </svg>
+                                    </button>
+                                    <button
+                                        class="layout-btn"
+                                        data-layout="grid"
+                                        aria-label="Grid view"
+                                        title="Grid view"
+                                    >
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use href="#icon-grid"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <ol class="card-list" id="page-card-list" data-reveal></ol>
+                        </div>
+                    </section>
+
+                    <!-- ─── DETAIL OVERLAY ─────────────────────────────────────────────── -->
+                    <dialog
+                        id="detail-overlay"
+                        class="detail-overlay"
+                        aria-labelledby="detail-title"
+                    >
+                        <div class="detail-header">
+                            <button id="detail-back" class="detail-back" aria-label="Close detail">
+                                <svg width="16" height="16" aria-hidden="true">
+                                    <use href="#icon-back"></use>
+                                </svg>
+                                Back
+                            </button>
+                            <span class="detail-breadcrumb">Loading...</span>
+                        </div>
+                        <div class="detail-body">
+                            <h1 id="detail-title" class="detail-title">Loading...</h1>
+                            <div id="detail-anim" class="detail-anim" aria-hidden="true"></div>
+                            <div id="detail-content"></div>
+                        </div>
+                    </dialog>
+                </div>
+                <!-- /.page-right -->
+            </div>
+            <!-- /.page-body -->
+        </div>
+        <!-- /.page-frame -->
+
+        <script src="../assets/js/nav-db.js"></script>
+        <script src="../assets/js/app.js"></script>
+        <script src="../assets/js/details.js"></script>
+        <script src="../assets/js/card-loader.js"></script>
+        <script src="../assets/js/list-db.js"></script>
+        <div class="detail-backdrop" id="detail-backdrop"></div>
+    </body>
+</html>

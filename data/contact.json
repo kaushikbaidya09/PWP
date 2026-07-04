@@ -1,0 +1,64 @@
+{
+    "meta": {
+        "title": "Contact - Kaushik Baidya",
+        "description": "Get in touch - embedded software consulting, full-time roles, or collaboration on interesting embedded projects."
+    },
+    "pageLeft": {
+        "titleParts": ["Get in", "Touch"],
+        "sub": "Let's Talk"
+    },
+    "hero": {
+        "eyebrow": "Let us Talk",
+        "headingParts": ["Get in", "Touch"]
+    },
+    "intro": "Open to full-time embedded roles, consulting engagements, and interesting side projects. Response time is typically within 24 hours.",
+    "availability": {
+        "open": true,
+        "statusText": "Available for new opportunities",
+        "location": "Bangalore, India - open to remote",
+        "timezone": "IST (UTC+5:30)"
+    },
+    "links": [
+        {
+            "type": "email",
+            "label": "Email",
+            "value": "user.name@example.com",
+            "href": "mailto:user.name@example.com"
+        },
+        {
+            "type": "github",
+            "label": "GitHub",
+            "value": "github.com/username-embedded",
+            "href": "https://github.com/username-embedded",
+            "external": true
+        },
+        {
+            "type": "linkedin",
+            "label": "LinkedIn",
+            "value": "linkedin.com/in/username-embedded",
+            "href": "https://linkedin.com/in/username-embedded",
+            "external": true
+        },
+        {
+            "type": "resume",
+            "label": "Resume",
+            "value": "Download PDF - Kaushik Baidya",
+            "href": "#",
+            "download": true
+        },
+        {
+            "type": "devto",
+            "label": "Dev.to",
+            "value": "dev.to/username",
+            "href": "https://dev.to/username",
+            "external": true
+        }
+    ],
+    "form": {
+        "title": "Send a Message",
+        "checkboxLabel": "Subscribe to occasional technical posts (no spam, unsubscribe any time)",
+        "submitLabel": "Send Message",
+        "successMsg": "Message sent - I will get back to you within 24 hours.",
+        "errorMsg": "Something went wrong - please try emailing directly."
+    }
+}
