@@ -1,20 +1,16 @@
 /* nav-db.js — resolves all nav hrefs from data/nav.json
  *
  * All links are stored as root-relative paths in nav.json.
- * This module computes a per-page prefix (e.g. "../" for pages/)
- * so the same config works from every location in the tree.
+ * Each page declares its own fixed distance back to the site root via
+ * data-root (e.g. "" for index.html, "../" for pages/*.html) — the same
+ * convention as data-svg-base — so resolution never depends on the URL's
+ * pathname, which breaks when the site is served from a subpath.
  * Mark nav anchors with data-nav="<key>" and the CTA with data-nav-cta.
  */
 (function () {
     'use strict';
 
-    var pathParts = location.pathname.split('/').filter(Boolean);
-    pathParts.pop(); /* remove filename */
-    var prefix = pathParts
-        .map(function () {
-            return '../';
-        })
-        .join('');
+    var prefix = document.documentElement.dataset.root || '';
     var currentFile = location.pathname.split('/').pop() || 'index.html';
     /* For list.html, disambiguate by section query param */
     if (currentFile === 'list.html') {
