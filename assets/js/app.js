@@ -19,17 +19,46 @@
         document.body.insertBefore(div, document.body.firstChild);
     })();
 
+    /* ── Storage (throws when blocked, e.g. some private modes) ───── */
+    const store = {
+        get(key) {
+            try {
+                return localStorage.getItem(key);
+            } catch (_) {
+                return null;
+            }
+        },
+        set(key, val) {
+            try {
+                localStorage.setItem(key, val);
+            } catch (_) {
+                /* ignore */
+            }
+        },
+    };
+
+    /* ── Shared data/about.json fetch (also used by about-db.js) ──── */
+    let aboutPromise;
+    window.loadAboutData = function () {
+        aboutPromise =
+            aboutPromise ||
+            fetch('data/about.json').then(function (r) {
+                return r.ok ? r.json() : Promise.reject(r.status);
+            });
+        return aboutPromise;
+    };
+
     /* ── Theme toggle ─────────────────────────────────────────────── */
     const html = document.documentElement;
     const toggle = document.getElementById('theme-toggle');
-    const stored = localStorage.getItem('theme') || 'dark';
+    const stored = store.get('theme') || 'dark';
     html.setAttribute('data-theme', stored);
 
     toggle &&
         toggle.addEventListener('click', () => {
             const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
+            store.set('theme', next);
             /* Notify canvas-based components */
             window.dispatchEvent(new CustomEvent('themechange'));
         });
@@ -73,11 +102,23 @@
             burger.setAttribute('aria-expanded', open.toString());
         });
 
-    document.querySelectorAll('.nav__link').forEach((a) => {
-        a.addEventListener('click', () => {
-            nav.classList.remove('nav--open');
-            burger && burger.setAttribute('aria-expanded', 'false');
-        });
+    function closeMenu() {
+        if (!nav || !nav.classList.contains('nav--open')) return;
+        nav.classList.remove('nav--open');
+        burger && burger.setAttribute('aria-expanded', 'false');
+    }
+
+    document.querySelectorAll('.nav__link').forEach((a) => a.addEventListener('click', closeMenu));
+
+    /* Close the dropdown on outside tap, Escape, or when widening past the mobile breakpoint */
+    document.addEventListener('click', (e) => {
+        if (nav && !nav.contains(e.target)) closeMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+    });
+    window.matchMedia('(min-width: 769px)').addEventListener('change', (mq) => {
+        if (mq.matches) closeMenu();
     });
 
     /* ── Intersection observer — reveal ──────────────────────────── */
@@ -98,7 +139,7 @@
     /* ── Layout toggle (grid / list) ─────────────────────────────── */
     const layoutBtns = document.querySelectorAll('.layout-btn');
     if (layoutBtns.length) {
-        const savedLayout = localStorage.getItem('card-layout') || 'list';
+        const savedLayout = store.get('card-layout') || 'list';
 
         function applyLayout(mode) {
             document.querySelectorAll('.card-list').forEach((list) => {
@@ -107,7 +148,7 @@
             layoutBtns.forEach((btn) => {
                 btn.classList.toggle('is-active', btn.dataset.layout === mode);
             });
-            localStorage.setItem('card-layout', mode);
+            store.set('card-layout', mode);
         }
 
         applyLayout(savedLayout);
@@ -135,10 +176,8 @@
     const skillsPanel = document.getElementById('skills-panel');
     const skillsTabs = document.querySelectorAll('.skills-tab');
     if (skillsPanel || skillsTabs.length) {
-        fetch('data/about.json')
-            .then(function (r) {
-                return r.ok ? r.json() : Promise.reject(r.status);
-            })
+        window
+            .loadAboutData()
             .then(function (data) {
                 const SKILLS = data.skills || {};
 
@@ -204,8 +243,12 @@
         { threshold: 0.3 }
     );
 
+    /* Observe only once about-db.js has written the real data-count values */
     const dashGrid = document.querySelector('.dashboard__grid');
-    if (dashGrid) dashObserver.observe(dashGrid);
+    if (dashGrid)
+        window.loadAboutData().finally(function () {
+            dashObserver.observe(dashGrid);
+        });
 
     /* ── Contact form ─────────────────────────────────────────────── */
     const contactForm = document.getElementById('contact-form');

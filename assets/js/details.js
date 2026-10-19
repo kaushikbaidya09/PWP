@@ -48,11 +48,13 @@ function _mdInline(raw) {
     });
     t = _esc(t);
     t = t.replace(/\*\*\*([^*\n]+?)\*\*\*/g, '<strong><em>$1</em></strong>');
-    t = t.replace(/___([^_\n]+?)___/g, '<strong><em>$1</em></strong>');
+    /* Underscore emphasis only at word boundaries, so identifiers like
+       MAX_SYSCALL_INTERRUPT_PRIORITY stay intact (CommonMark rule) */
+    t = t.replace(/(^|[^\w])___([^_\n]+?)___(?!\w)/g, '$1<strong><em>$2</em></strong>');
     t = t.replace(/\*\*([^*\n]+?)\*\*/g, '<strong>$1</strong>');
-    t = t.replace(/__([^_\n]+?)__/g, '<strong>$1</strong>');
+    t = t.replace(/(^|[^\w])__([^_\n]+?)__(?!\w)/g, '$1<strong>$2</strong>');
     t = t.replace(/\*([^*\n]+?)\*/g, '<em>$1</em>');
-    t = t.replace(/_([^_\n]+?)_/g, '<em>$1</em>');
+    t = t.replace(/(^|[^\w])_([^_\n]+?)_(?!\w)/g, '$1<em>$2</em>');
     t = t.replace(/~~([^~\n]+?)~~/g, '<del>$1</del>');
     t = t.replace(/\\([*_`~\[\]()#+\-.!\\])/g, '$1');
     t = t.replace(/\x00(\d+)\x00/g, function (_, i) {

@@ -23,7 +23,8 @@
             /* ── left panel ─────────────────────────────────────────────── */
             if (d.pageLeft) {
                 var lt = document.querySelector('.page-left__title');
-                if (lt && d.pageLeft.titleParts) lt.innerHTML = d.pageLeft.titleParts.join('<br>');
+                /* space keeps words apart when <br> is hidden on mobile */
+                if (lt && d.pageLeft.titleParts) lt.innerHTML = d.pageLeft.titleParts.join(' <br>');
                 setText('.page-left__sub', d.pageLeft.sub);
             }
 

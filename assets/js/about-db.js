@@ -7,10 +7,16 @@
         if (el && val != null) el.textContent = val;
     }
 
-    fetch('data/about.json')
-        .then(function (r) {
-            return r.ok ? r.json() : Promise.reject(r.status);
-        })
+    /* loadAboutData (app.js) shares one fetch with the skills panel */
+    var load =
+        window.loadAboutData ||
+        function () {
+            return fetch('data/about.json').then(function (r) {
+                return r.ok ? r.json() : Promise.reject(r.status);
+            });
+        };
+
+    load()
         .then(function (d) {
             /* ── meta ──────────────────────────────────────────────────────── */
             if (d.meta) {
@@ -82,21 +88,7 @@
                 if (lbl) lbl.textContent = s.label;
                 if (sub) sub.textContent = s.sub;
             });
-            /* re-run count animation with fetched values */
-            var dashGrid = document.querySelector('.dashboard__grid');
-            if (dashGrid) {
-                dashGrid.querySelectorAll('[data-count]').forEach(function (el) {
-                    var target = parseInt(el.getAttribute('data-count'), 10);
-                    var start = performance.now();
-                    function step(now) {
-                        var p = Math.min((now - start) / 1200, 1);
-                        el.textContent = Math.round(p * target);
-                        if (p < 1) requestAnimationFrame(step);
-                        else el.textContent = target;
-                    }
-                    requestAnimationFrame(step);
-                });
-            }
+            /* count-up animation runs from app.js when the grid scrolls into view */
         })
         .catch(function (e) {
             console.warn('data/about.json load failed:', e);
