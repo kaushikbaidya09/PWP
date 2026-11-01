@@ -1,0 +1,17 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>APB / AHB Bus</b>" as bus <<hw>>
+rectangle "<b>Mode Register</b>" as mode <<kern>>
+rectangle "<b>Input Mode</b> → Schmitt Trigger" as in <<sw>>
+rectangle "<b>Output Mode</b>\nPush-Pull / Open-Drain" as out <<sw>>
+rectangle "<b>GPIO PAD</b>" as pad <<isr>>
+rectangle "<b>Pull-Up / Pull-Down</b>\n(switchable)" as pull
+rectangle "<b>EXTI Line → NVIC</b>" as exti <<queue>>
+bus --> mode
+mode --> in
+mode --> out
+out --> pad : output drive
+pad --> in
+pull --> pad
+in --> exti
+@enduml

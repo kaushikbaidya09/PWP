@@ -1,0 +1,11 @@
+@startuml
+!include _theme.iuml
+rectangle s [
+$APP <b>APPLICATION LAYER</b> — product logic, system coordination |
+$SW <b>MIDDLEWARE LAYER</b> — protocol stacks, algorithms, utilities |
+$KERN <b>DRIVER LAYER</b> — per-device protocol sequencing |
+$QUEUE <b>HARDWARE ABSTRACTION LAYER (HAL)</b> — peripheral capability interfaces |
+$HW <b>BSP / REGISTERS</b> — MCU-specific, board-specific configuration |
+]
+footer Each layer calls down to the one below it
+@enduml

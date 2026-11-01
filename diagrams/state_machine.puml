@@ -1,0 +1,14 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>HARDWARE / ISRs</b>\n(GPIO, UART, Timer)" as h <<hw>>
+rectangle "<b>PERIPHERAL DRIVERS</b>\n(SPI, I2C, ADC)" as d <<hw>>
+rectangle "<b>EVENT QUEUE</b>\n(ring buffer / flags)" as q <<queue>>
+rectangle "<b>STATE MACHINE DISPATCHER</b>\ncurrent state · transition table\nentry / exit actions" as s <<kern>>
+rectangle "<b>OUTPUT ACTIONS</b>\n(HAL, actuators,\ndisplay updates)" as o <<sw>>
+rectangle "<b>APPLICATION LOGIC</b>\n(business rules,\ndata processing)" as a <<app>>
+h --> q : events
+d --> q : callbacks
+q --> s
+s --> o
+s --> a
+@enduml

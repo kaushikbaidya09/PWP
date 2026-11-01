@@ -1,0 +1,9 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Process A</b>" as a <<sw>>
+rectangle "<b>Socket or</b>\n<b>shared memory</b>" as k <<queue>>
+rectangle "<b>Process B</b>" as b <<sw>>
+a --> k
+k --> b
+@enduml

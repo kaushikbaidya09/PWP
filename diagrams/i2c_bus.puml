@@ -1,0 +1,12 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>I²C MASTER</b>\n(MCU / CPU)" as m <<kern>>
+rectangle "<b>SDA (data)</b> — open-drain, pull-up to VCC\n<b>SCL (clock)</b> — open-drain, pull-up to VCC" as b <<hw>>
+rectangle "<b>Slave 0x50</b>\n(EEPROM)" as a <<queue>>
+rectangle "<b>Slave 0x48</b>\n(Temp sensor)" as c <<queue>>
+rectangle "<b>Slave 0x68</b>\n(IMU)" as d <<queue>>
+m <--> b
+b <--> a
+b <--> c
+b <--> d
+@enduml

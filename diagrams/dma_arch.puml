@@ -1,0 +1,14 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>CPU</b>\n(Cortex-M core)" as c <<sw>>
+rectangle "<b>DMA CONTROLLER</b>\n(DMA1 / DMA2)" as d <<kern>>
+rectangle "<b>AHB BUS MATRIX</b>" as m <<queue>>
+rectangle "<b>Flash / SRAM</b>\ncode + data" as f <<hw>>
+rectangle "<b>SRAM</b>\nbuffers" as s <<hw>>
+rectangle "<b>Peripheral Bus</b>\n(APB)" as p
+c --> m
+d --> m
+m --> f
+m --> s
+m --> p
+@enduml

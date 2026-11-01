@@ -1,0 +1,25 @@
+@startuml
+!include _theme.iuml
+title OTA BOOTLOADER — DUAL-BANK ECDSA UPDATE FLOW
+rectangle fl [
+$GRAY <b>FLASH LAYOUT</b> |
+$HW <b>Bootloader</b> — 64 KB · ROM-like |
+$SW <b>Bank A (active)</b> — Active firmware |
+$KERN <b>Bank B (update)</b> — Incoming image |
+$WARN <b>OTP + Keys</b> — Anti-rollback · ECDSA pubkey |
+]
+rectangle "<b>1. Receive</b>\nfirmware over\nUART / CAN" as a <<sw>>
+rectangle "<b>2. Write</b>\nto Bank B\n(sector-by-sector)" as b <<sw>>
+rectangle "<b>3. Verify ECDSA</b>\nsecp256k1\nsignature" as c <<kern>>
+rectangle "<b>4. Anti-Rollback</b>\nOTP version\ncheck" as d <<kern>>
+rectangle "<b>5. Set Boot Flag</b>\nswap banks\non next reset" as e <<queue>>
+rectangle "<b>6. Reset → Bank B</b>\nBoot from\nnew firmware" as f <<app>>
+rectangle "Fail → erase Bank B · signal error · stay on Bank A" as x <<isr>>
+fl -[hidden]down-> b
+a -right-> b
+b -right-> c
+c -down-> d
+d -left-> e
+e -left-> f
+d -down-> x : fail
+@enduml

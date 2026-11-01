@@ -1,0 +1,11 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Boot ROM</b>\nimmutable" as a <<isr>>
+rectangle "<b>Bootloader</b>" as b <<kern>>
+rectangle "<b>Kernel / Firmware</b>" as c <<hw>>
+rectangle "<b>Application</b>" as d <<sw>>
+a --> b : verifies
+b --> c : verifies
+c --> d : verifies
+@enduml

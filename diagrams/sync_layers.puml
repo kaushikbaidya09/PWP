@@ -1,0 +1,14 @@
+@startuml
+!include _theme.iuml
+rectangle "Task A (Priority HIGH)" as a <<sw>>
+rectangle "Task B (Priority MED)" as b <<sw>>
+rectangle "Task C (Priority LOW)" as c <<sw>>
+rectangle "ISR (NMI / IRQ)" as i <<isr>>
+rectangle "<b>SYNCHRONIZATION</b>\nMutex · Semaphore\nSpinlock · Critical section" as s <<kern>>
+rectangle "<b>GLOBAL STATE / RAM</b>\nring buffer · peripheral register\nlinked list / queue" as g <<queue>>
+a --> s
+b --> s
+c --> s
+i --> s
+s --> g
+@enduml

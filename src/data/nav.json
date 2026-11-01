@@ -1,0 +1,41 @@
+{
+    "brand": {
+        "name": "Kaushik Baidya",
+        "ariaLabel": "Kaushik Baidya - Home"
+    },
+    "links": [
+        {
+            "key": "about",
+            "label": "About",
+            "href": "/"
+        },
+        {
+            "key": "projects",
+            "label": "Projects",
+            "href": "/projects/"
+        },
+        {
+            "key": "knowledge",
+            "label": "Knowledge",
+            "href": "/knowledge/"
+        },
+        {
+            "key": "blog",
+            "label": "Blog",
+            "href": "/blog/"
+        },
+        {
+            "key": "contact",
+            "label": "Contact",
+            "href": "/contact/"
+        }
+    ],
+    "cta": {
+        "label": "Get in Touch",
+        "href": "/contact/"
+    },
+    "footer": {
+        "copy": "© {year} Kaushik Baidya",
+        "sig": "Kaushik Baidya | Embedded Software Engineer | Since 2023"
+    }
+}

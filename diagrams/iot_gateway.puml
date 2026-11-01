@@ -1,0 +1,27 @@
+@startuml
+!include _theme.iuml
+left to right direction
+title INDUSTRIAL IoT GATEWAY ARCHITECTURE
+rectangle "<b>FIELD DEVICES</b>" as f <<hw>> {
+  rectangle "Modbus RTU\nCAN Sensors\n4–20 mA Inputs\nDigital I/O\nPT100 / TC" as fd <<hw>>
+}
+rectangle "<b>GATEWAY (STM32MP1 · Cortex-A7 + M4)</b>" as g <<kern>> {
+  rectangle "<b>Protocol Adapters</b>\nModbus → JSON\nCAN → MQTT" as pa <<sw>>
+  rectangle "<b>Data Aggregator</b>\nTimestamp\nNormalize" as da <<sw>>
+  rectangle "<b>Edge Analytics</b>\nThreshold\nAlerts" as ea <<sw>>
+  rectangle "<b>TLS/mTLS Client</b>\nAWS IoT\nAzure Hub" as tls <<queue>>
+  rectangle "<b>Local Storage</b>\nSD card\nStore+Fwd" as ls <<queue>>
+  rectangle "<b>OTA Update</b>\nSigned images" as ota <<queue>>
+  pa --> da
+  da --> ea
+  fd -[hidden]-> tls
+  pa -[hidden]-> ls
+  da -[hidden]-> ota
+}
+rectangle "<b>CLOUD</b>" as c <<app>> {
+  rectangle "MQTT Broker\nTime Series DB\nDashboard\nAlerting\nDevice Mgmt" as cd <<app>>
+}
+fd --> pa
+ea --> cd
+footer < 100 ms field-to-cloud latency · Store-and-forward on connectivity loss · mTLS device auth
+@enduml

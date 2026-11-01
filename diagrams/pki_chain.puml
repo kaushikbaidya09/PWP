@@ -1,0 +1,8 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>Root CA</b>" as r <<isr>>
+rectangle "<b>Intermediate CA</b>" as i <<kern>>
+rectangle "<b>Device certificate</b>" as e <<hw>>
+r --> i : signs
+i --> e : signs
+@enduml

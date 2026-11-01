@@ -1,0 +1,104 @@
+---
+/* Long-form page shared by Knowledge articles and blog posts. */
+import Icon from './Icon.astro';
+
+interface Link {
+    href: string;
+    title: string;
+}
+interface Props {
+    title: string;
+    brief: string;
+    crumbs: Link[];
+    meta: string[];
+    tags: string[];
+    headings: { depth: number; slug: string; text: string }[];
+    prev?: Link;
+    next?: Link;
+}
+const { title, brief, crumbs, meta, tags, headings, prev, next } = Astro.props;
+const toc = headings.filter((h) => h.depth === 2);
+---
+
+<div class="article-bar" id="article-bar">
+    <div class="article-bar__title">
+        <a href="#main" aria-label="Back to top"><span>{title}</span></a>
+    </div>
+    <div class="read-progress" aria-hidden="true"><span id="read-progress"></span></div>
+</div>
+<div class:list={['article-layout container', { 'article-layout--rail': toc.length > 2 }]}>
+<article class="article">
+    <nav class="article__crumbs" aria-label="Breadcrumb">
+        <a href={crumbs[0].href} class="article__back"><Icon name="back" size={14} /> {crumbs[0].title}</a>
+        {crumbs.slice(1).map((c) => <span>/ {c.title}</span>)}
+    </nav>
+    <header class="article__head">
+        <h1 class="article__title" id="article-title">{title}</h1>
+        <p class="article__brief">{brief}</p>
+        <ul class="article__meta">
+            {meta.map((m) => <li>{m}</li>)}
+        </ul>
+        {tags.length > 0 && <ul class="card__tags">{tags.map((t) => <li class="tag">{t}</li>)}</ul>}
+    </header>
+
+    {
+        toc.length > 2 && (
+            <details class="article__toc">
+                <summary>On this page</summary>
+                <ol>
+                    {toc.map((h) => (
+                        <li>
+                            <a href={`#${h.slug}`}>{h.text}</a>
+                        </li>
+                    ))}
+                </ol>
+            </details>
+        )
+    }
+
+    <div class="prose">
+        <slot />
+    </div>
+
+    {
+        (prev || next) && (
+            <nav class="article__pager" aria-label="More articles">
+                {prev ? (
+                    <a href={prev.href} class="article__pager-link">
+                        <span>Previous</span>
+                        {prev.title}
+                    </a>
+                ) : (
+                    <span />
+                )}
+                {next && (
+                    <a href={next.href} class="article__pager-link article__pager-link--next">
+                        <span>Next</span>
+                        {next.title}
+                    </a>
+                )}
+            </nav>
+        )
+    }
+</article>
+{
+    toc.length > 2 && (
+        <aside class="article__rail" aria-label="On this page">
+            <p class="article__rail-title">On this page</p>
+            <ol>
+                {toc.map((h) => (
+                    <li>
+                        <a href={`#${h.slug}`} data-spy={h.slug}>
+                            {h.text}
+                        </a>
+                    </li>
+                ))}
+            </ol>
+        </aside>
+    )
+}
+</div>
+
+<script>
+    import '../scripts/article.ts';
+</script>

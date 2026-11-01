@@ -1,0 +1,9 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Test</b>" as t <<app>>
+rectangle "<b>Your logic</b>" as l <<sw>>
+rectangle "<b>Mock</b>\nin place of hardware" as m <<queue>>
+t --> l
+l --> m
+@enduml

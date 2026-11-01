@@ -1,0 +1,9 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Sensor</b>" as s <<hw>>
+rectangle "<b>Broker</b>" as b <<queue>>
+rectangle "<b>Subscribers</b>" as d <<app>>
+s --> b : publish
+b --> d : deliver
+@enduml

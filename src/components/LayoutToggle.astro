@@ -1,0 +1,16 @@
+---
+import Icon from './Icon.astro';
+---
+
+<div class="layout-toggle">
+    <button class="layout-btn" data-layout="list" aria-label="List view" title="List view">
+        <Icon name="list" size={14} />
+    </button>
+    <button class="layout-btn" data-layout="grid" aria-label="Grid view" title="Grid view">
+        <Icon name="grid" size={14} />
+    </button>
+</div>
+
+<script>
+    import '../scripts/layout-toggle.ts';
+</script>

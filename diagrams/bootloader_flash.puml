@@ -1,0 +1,14 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>POWER ON / RESET</b>" as p <<hw>>
+rectangle "<b>BOOTLOADER</b>\n(protected flash — never updated)" as b <<kern>>
+hexagon "Update flag set?\nNew image valid?" as q
+rectangle "<b>FIRMWARE UPDATE</b>\n— erase active bank\n— copy / swap\n— verify CRC" as u <<isr>>
+rectangle "<b>JUMP TO APP</b>\n— set Stack Pointer\n— jump to reset handler" as j <<app>>
+rectangle "<b>Boot new image</b>\n(rollback if verify fails)" as n <<sw>>
+p --> b
+b --> q
+q --> u : YES
+q --> j : NO (valid app)
+u --> n
+@enduml

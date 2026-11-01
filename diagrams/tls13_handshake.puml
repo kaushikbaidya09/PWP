@@ -1,0 +1,10 @@
+@startuml
+!include _theme.iuml
+participant "Client" as C
+participant "Server" as S
+C -> S : Hello + key share
+S -> C : Hello + key share
+S -> C : Certificate + proof
+C -> S : Finished
+C <-> S : Encrypted data
+@enduml

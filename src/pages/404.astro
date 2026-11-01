@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { url } from '../lib/url';
+---
+
+<Base title="Page not found — Kaushik Baidya" description="This page does not exist.">
+    <section class="error-section">
+        <div class="error-inner">
+            <div class="error-caution"><Icon name="caution" size={48} /></div>
+            <p class="error-num">404</p>
+            <h1 class="error-title">Page not found</h1>
+            <p class="error-desc">The page you were looking for does not exist or has moved.</p>
+            <div class="error-actions">
+                <a href={url('/')} class="btn btn--gray">Go back home</a>
+                <a href={url('/knowledge/')} class="btn btn--gray">Browse the knowledge base</a>
+            </div>
+        </div>
+    </section>
+</Base>

@@ -1,0 +1,9 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>.dts</b>\nboard description" as a <<sw>>
+rectangle "<b>.dtb</b>\ncompiled" as b <<queue>>
+rectangle "<b>Kernel</b>\nmatches drivers" as c <<kern>>
+a --> b : dtc
+b --> c : U-Boot
+@enduml

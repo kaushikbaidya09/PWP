@@ -1,0 +1,25 @@
+@startuml
+!include _theme.iuml
+left to right direction
+title CAN FD → ETHERNET UDP GATEWAY (STM32H7 + FreeRTOS)
+rectangle "<b>CAN FD Bus</b>\n2 × FDCAN 8 Mbps" as can <<hw>>
+rectangle "<b>STM32H7 (480 MHz Cortex-M7)</b>" as mcu <<kern>> {
+  rectangle "<b>CAN RX Task</b>\nDMA → FIFO" as rx <<sw>>
+  rectangle "<b>Router Task</b>\nID filter" as rt <<sw>>
+  rectangle "<b>UDP TX Task</b>\nLWIP stack" as tx <<sw>>
+  rectangle "<b>Config Task</b>\nUART CLI" as cfg <<sw>>
+  rectangle "FreeRTOS · Queue · Semaphore · DMA" as os <<queue>>
+  rectangle "FDCAN1/2 + TJA1051" as fd <<hw>>
+  rectangle "ETH MAC + DP83848" as mac <<hw>>
+  rx --> rt
+  rt --> tx
+  tx -[hidden]-> cfg
+  rx -[hidden]-> os
+  rt -[hidden]-> fd
+  tx -[hidden]-> mac
+}
+rectangle "<b>Ethernet</b>\n100BASE-TX UDP" as eth <<hw>>
+can --> rx
+tx --> eth
+footer ≤ 500 µs end-to-end · 10 000 frames/s sustained · zero frame loss
+@enduml

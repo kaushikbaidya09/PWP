@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import Card from '../../components/Card.astro';
+import LayoutToggle from '../../components/LayoutToggle.astro';
+import page from '../../data/projects.json';
+import { published, titleOf, pad } from '../../lib/content';
+import { url } from '../../lib/url';
+
+const projects = await published('projects', { needsBody: false });
+---
+
+<Base title={page.meta.title} description={page.meta.description} active="projects" left={{ title: page.pageLeft.titleParts, sub: page.pageLeft.sub }}>
+    <section class="section page-list">
+        <div class="container">
+            <p class="page-intro" data-reveal>{page.hero.desc}</p>
+            <div class="section-header" data-reveal>
+                <h2 class="section__label">{page.section.label}</h2>
+                <LayoutToggle />
+            </div>
+            <ol class="card-list" data-reveal>
+                {
+                    projects.map((p, i) => (
+                        <Card num={pad(i + 1)} title={titleOf(p)} brief={p.data.brief} tags={p.data.tags} href={url(`/projects/${p.id}/`)} />
+                    ))
+                }
+            </ol>
+        </div>
+    </section>
+</Base>

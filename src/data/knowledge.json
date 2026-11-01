@@ -1,0 +1,13 @@
+{
+    "meta": {
+        "title": "Knowledge",
+        "description": "Embedded systems knowledge base: boot, memory, interrupts, RTOS, peripherals, protocols, debugging and security, explained from first principles."
+    },
+    "pageLeft": {
+        "titleParts": ["Knowledge", "Base"],
+        "sub": "Protocols & Concepts"
+    },
+    "hero": {
+        "desc": "Embedded systems concepts explained from first principles, in roadmap order. Each article opens with a short summary; the deep dives are folded away until you want them."
+    }
+}

@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import Article from '../../components/Article.astro';
+import { published, titleOf } from '../../lib/content';
+import { url } from '../../lib/url';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const all = await published('blog');
+    return all.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content, headings, remarkPluginFrontmatter: fm } = await render(entry);
+const title = titleOf(entry);
+const date = entry.data.date.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+---
+
+<Base title={`${title} — Blog`} description={entry.data.brief} active="blog">
+    <Article
+        title={title}
+        brief={entry.data.brief}
+        crumbs={[{ href: url('/blog/'), title: 'Blog' }]}
+        meta={[date, `${fm.fullMinutes} min read`]}
+        tags={entry.data.tags}
+        headings={headings}
+    >
+        <Content />
+    </Article>
+</Base>

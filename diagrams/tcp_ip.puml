@@ -1,0 +1,10 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>Application data</b>" as a <<app>>
+rectangle "<b>TCP</b>\nport" as t <<sw>>
+rectangle "<b>IP</b>\naddress" as i <<kern>>
+rectangle "<b>Ethernet</b>\nthe wire" as e <<hw>>
+a --> t
+t --> i
+i --> e
+@enduml

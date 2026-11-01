@@ -1,0 +1,12 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>PERIPHERAL</b>\n(UART, Timer, GPIO, ADC)" as p <<hw>>
+rectangle "<b>NVIC</b>\n(Cortex-M)" as n <<kern>>
+rectangle "<b>CPU</b>\n1. Finish current instruction\n2. Save context (push regs)\n3. Fetch interrupt vector\n4. Jump to ISR" as c <<sw>>
+rectangle "<b>ISR Handler</b>\n(clear flag, post event)" as i <<isr>>
+rectangle "<b>Resume interrupted</b>\nbackground code" as r <<app>>
+p -right-> n : IRQ line asserted
+n -down-> c : interrupt request
+c -down-> i
+i -left-> r : restore context
+@enduml

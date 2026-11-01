@@ -1,0 +1,12 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Requirement</b>" as a <<sw>>
+rectangle "<b>Design</b>" as b <<kern>>
+rectangle "<b>Review</b>" as c <<queue>>
+rectangle "<b>Code</b>" as d <<app>>
+a --> b
+b --> c
+c --> b
+c --> d
+@enduml

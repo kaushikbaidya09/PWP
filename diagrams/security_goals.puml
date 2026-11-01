@@ -1,0 +1,13 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Authenticity</b>" as c <<hw>>
+rectangle "<b>Integrity</b>" as b <<hw>>
+rectangle "<b>Confidentiality</b>" as a <<hw>>
+rectangle "Signature" as z <<sw>>
+rectangle "MAC" as y <<sw>>
+rectangle "Encryption" as x <<sw>>
+c --> z
+b --> y
+a --> x
+@enduml

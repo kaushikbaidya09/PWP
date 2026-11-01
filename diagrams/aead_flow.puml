@@ -1,0 +1,13 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Plaintext</b>" as p <<sw>>
+rectangle "<b>Encrypt</b>" as e <<kern>>
+rectangle "<b>Ciphertext + Tag</b>" as c <<hw>>
+rectangle "<b>Decrypt</b>" as d <<kern>>
+rectangle "<b>Plaintext</b>" as o <<sw>>
+p --> e
+e --> c
+c --> d
+d --> o
+@enduml

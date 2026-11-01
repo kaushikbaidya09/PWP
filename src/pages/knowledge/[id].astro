@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import Article from '../../components/Article.astro';
+import { published, PHASES } from '../../lib/content';
+import { url } from '../../lib/url';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const all = await published('knowledge');
+    return all.map((entry, i) => ({ params: { id: entry.id }, props: { entry, prev: all[i - 1], next: all[i + 1] } }));
+}
+const { entry, prev, next } = Astro.props;
+const { Content, headings, remarkPluginFrontmatter: fm } = await render(entry);
+const link = (e?: typeof entry) => e && { href: url(`/knowledge/${e.id}/`), title: e.data.title.split(':')[0] };
+const meta = [`${fm.coreMinutes} min read`];
+if (fm.fullMinutes > fm.coreMinutes) meta.push(`${fm.fullMinutes} min with all deep dives`);
+---
+
+<Base title={`${entry.data.title.split(':')[0]} — Knowledge`} description={entry.data.brief} active="knowledge">
+    <Article
+        title={entry.data.title}
+        brief={entry.data.brief}
+        crumbs={[{ href: url('/knowledge/'), title: 'Knowledge' }, { href: '', title: `Phase ${entry.data.phase} · ${PHASES[entry.data.phase - 1]}` }]}
+        meta={meta}
+        tags={entry.data.tags}
+        headings={headings}
+        prev={link(prev)}
+        next={link(next)}
+    >
+        <Content />
+    </Article>
+</Base>

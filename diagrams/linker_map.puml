@@ -1,0 +1,22 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>Source Files</b> (.c, .s)" as s <<app>>
+rectangle "<b>Compiler / Assembler</b>" as c <<sw>>
+rectangle "<b>Object Files</b> (.o)\nrelocatable — no fixed addresses" as o <<sw>>
+rectangle "<b>Linker Script</b> (.ld)\nMEMORY regions\nSECTIONS layout" as l <<warn>>
+rectangle "<b>LINKER</b>" as k <<kern>>
+rectangle "<b>ELF Executable</b>" as e <<queue>>
+rectangle "<b>.bin / .hex</b>\n(objcopy)" as b <<queue>>
+rectangle "<b>Flash Programmer</b>" as p
+rectangle "<b>MCU Flash</b>\n0x08000000 .vectors\n0x08000100 .text\n0x0800xxxx .data init" as f <<hw>>
+rectangle "<b>MCU SRAM</b>\n0x20000000 .data\n0x2000xxxx .bss\nHeap ↑     ↓ Stack" as r <<hw>>
+s --> c : compile
+c --> o
+o --> k
+l -right-> k : linker script
+k --> e
+e --> b
+b --> p
+p --> f
+f -right-> r
+@enduml

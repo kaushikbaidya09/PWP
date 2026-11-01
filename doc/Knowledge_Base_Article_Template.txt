@@ -52,6 +52,14 @@ Use:
 Writing Goal:
 Create a mental map before diving deeper.
 
+IN PLAIN TERMS
+--------------
+Add this as a "### In Plain Terms" heading at the end of The Big Picture.
+Explain the idea with one everyday analogy, before any terminology.
+
+Writing Goal:
+Give a beginner an accurate mental picture in a few short paragraphs.
+
 KEY CONCEPTS AND TERMINOLOGY
 ----------------------------
 Introduce the core vocabulary required for the topic.
@@ -80,6 +88,23 @@ Each step should explain:
 
 Writing Goal:
 Allow readers to mentally simulate the system.
+
+A CLOSER LOOK
+-------------
+Heading: "## A Closer Look: <the idea>".
+Pick the one idea people find hardest and explain it slowly, in simple terms.
+
+Writing Goal:
+Remove the biggest point of confusion in the topic.
+
+A WORKED EXAMPLE
+----------------
+Heading: "## A Worked Example: <a real device>".
+Follow one real scenario step by step, with commands or code where useful.
+
+COMMON QUESTIONS
+----------------
+Three or four questions a beginner really asks, with short direct answers.
 
 UNDER THE HOOD
 --------------
@@ -185,8 +210,17 @@ GLOBAL WRITING GUIDELINES
 3. Use storytelling where possible.
 4. Teach cause-and-effect relationships.
 5. Focus on mental models, not memorization.
-6. Use diagrams heavily for architecture and flow topics.
+6. Keep each diagram to one idea and a few words; details belong in the text.
 7. Include expert insights not easily found in vendor documentation.
 8. Write as a senior engineer mentoring a junior engineer.
 9. Prioritize understanding over completeness.
 10. Build intuition before implementation details.
+
+PAGE BEHAVIOUR
+--------------
+- The Summary is moved to the top of the page as the "In short" box, and its
+  first paragraph is what readers see, so write that paragraph in plain language.
+- Under the Hood, Real-World Applications, Common Mistakes, Debugging and
+  Troubleshooting, Design Considerations and Best Practices, and Expert Notes
+  fold away by default.
+- Related Topics items that start with an article's name become links.

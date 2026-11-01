@@ -1,0 +1,58 @@
+{
+    "meta": {
+        "title": "Contact - Kaushik Baidya",
+        "description": "Contact Kaushik Baidya, embedded software engineer in Bangalore, about firmware, Embedded Linux or embedded security."
+    },
+    "hero": {
+        "eyebrow": "Contact",
+        "title": "Let's talk firmware."
+    },
+    "intro": "A question about Embedded Linux, RTOS firmware or embedded security, or something you read here? I would like to hear from you.",
+    "availability": {
+        "location": "Bangalore, India",
+        "timezone": "IST (UTC+5:30)"
+    },
+    "links": [
+        {
+            "type": "email",
+            "label": "Email",
+            "value": "",
+            "href": ""
+        },
+        {
+            "type": "github",
+            "label": "GitHub",
+            "value": "github.com/kaushikbaidya09",
+            "href": "https://github.com/kaushikbaidya09",
+            "external": true
+        },
+        {
+            "type": "linkedin",
+            "label": "LinkedIn",
+            "value": "linkedin.com/in/kaushikbaidya09",
+            "href": "https://www.linkedin.com/in/kaushikbaidya09",
+            "external": true
+        },
+        {
+            "type": "resume",
+            "label": "Resume",
+            "value": "",
+            "href": "",
+            "download": true
+        },
+        {
+            "type": "devto",
+            "label": "Dev.to",
+            "value": "",
+            "href": "",
+            "external": true
+        }
+    ],
+    "form": {
+        "title": "Send a Message",
+        "submitLabel": "Send Message",
+        "successMsg": "Message sent — thank you. I'll reply to the address you gave.",
+        "errorMsg": "The message could not be sent right now. Please try again later, or reach me via the links on this page.",
+        "unavailableMsg": "To get in touch, please use the links on this page."
+    }
+}

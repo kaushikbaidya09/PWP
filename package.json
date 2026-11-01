@@ -1,0 +1,24 @@
+{
+    "name": "pwp",
+    "private": true,
+    "type": "module",
+    "engines": {
+        "node": ">=22"
+    },
+    "scripts": {
+        "dev": "astro dev --host",
+        "build": "node scripts/theme-diagrams.mjs && astro build",
+        "preview": "astro preview --host",
+        "check": "astro check && node scripts/check-links.mjs",
+        "format": "prettier --write \"src/**/*.{ts,mjs,css,json}\" \"scripts/*.mjs\""
+    },
+    "dependencies": {
+        "@astrojs/sitemap": "^3.2.0",
+        "astro": "5.18.2"
+    },
+    "devDependencies": {
+        "@astrojs/check": "^0.9.4",
+        "prettier": "^3.3.0",
+        "typescript": "^5.6.0"
+    }
+}

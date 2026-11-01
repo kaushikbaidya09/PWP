@@ -1,0 +1,9 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Source</b>\non x86 host" as s <<sw>>
+rectangle "<b>Cross compiler</b>" as c <<kern>>
+rectangle "<b>Arm binary</b>\nfor target" as b <<hw>>
+s --> c
+c --> b
+@enduml

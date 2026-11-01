@@ -1,0 +1,8 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>Application</b>" as a <<app>>
+rectangle "<b>LVGL</b>" as l <<kern>>
+rectangle "<b>Display and touch drivers</b>" as d <<hw>>
+a --> l
+l --> d
+@enduml

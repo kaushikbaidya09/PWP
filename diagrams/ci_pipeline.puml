@@ -1,0 +1,13 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Commit</b>" as a <<sw>>
+rectangle "<b>Build</b>" as b <<queue>>
+rectangle "<b>Analyse</b>" as c <<kern>>
+rectangle "<b>Test</b>" as d <<kern>>
+rectangle "<b>Merge</b>" as e <<app>>
+a --> b
+b --> c
+c --> d
+d --> e
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>PHYSICAL WORLD</b>" as w
+rectangle "<b>Sensor / Transducer</b>\n(thermocouple, microphone, strain gauge, ...)" as s <<hw>>
+rectangle "<b>Signal Conditioning</b>\n(amplify · level-shift · anti-alias filter · impedance buffer)" as c <<sw>>
+rectangle "<b>MCU ADC</b>\nSample-Hold → Compare → Register" as a <<kern>>
+rectangle "<b>Firmware</b>\n(scale, calibrate, filter)" as f <<app>>
+rectangle "<b>DAC → Output Conditioning</b>\n→ Actuator / Load" as d <<isr>>
+w --> s : raw signal
+s --> c : raw voltage
+c --> a : conditioned voltage
+a --> f : digital count
+f --> d : processed value
+@enduml

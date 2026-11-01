@@ -1,0 +1,81 @@
+/* Design tokens for both themes, including the diagram palette */
+
+:root {
+    --bg: #08080a;
+    --surface: #111114;
+    --surface-2: #18181c;
+    --surface-3: #202024;
+    --border: rgba(255, 255, 255, 0.22);
+    --border-2: rgba(255, 255, 255, 0.38);
+    --border-3: rgba(255, 255, 255, 0.55);
+    --border-4: rgba(255, 255, 255, 0.75);
+    --shine: rgba(255, 255, 255, 0.04);
+    --shine-2: rgba(255, 255, 255, 0.08);
+    --text: #ffffff;
+    --text-2: rgba(255, 255, 255, 0.88);
+    --text-3: rgba(255, 255, 255, 0.7);
+    --text-4: rgba(255, 255, 255, 0.5);
+    --accent: #ffffff;
+    --accent-2: rgba(255, 255, 255, 0.1);
+    --sans: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --serif: 'Source Serif 4', Georgia, Cambria, 'Times New Roman', Times, serif;
+    --mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+    --r-sm: 6px;
+    --r: 10px;
+    --r-lg: 14px;
+    --t: 0.15s ease;
+}
+[data-theme='light'] {
+    --bg: #f8f8f8;
+    --surface: #ffffff;
+    --surface-2: #f2f2f4;
+    --surface-3: #e8e8ec;
+    --border: rgba(0, 0, 0, 0.22);
+    --border-2: rgba(0, 0, 0, 0.38);
+    --border-3: rgba(0, 0, 0, 0.55);
+    --border-4: rgba(0, 0, 0, 0.75);
+    --shine: rgba(255, 255, 255, 0.6);
+    --shine-2: rgba(255, 255, 255, 0.8);
+    --text: #000000;
+    --text-2: rgba(0, 0, 0, 0.88);
+    --text-3: rgba(0, 0, 0, 0.7);
+    --text-4: rgba(0, 0, 0, 0.5);
+    --accent: #000000;
+    --accent-2: rgba(0, 0, 0, 0.1);
+}
+
+:root {
+    /* Diagrams use the site palette, so they match in both themes */
+    --dg-arrow: var(--border-3);
+    --dg-note-bg: var(--surface-2);
+    --dg-muted: var(--text-3);
+    --dg-gray-bg: var(--surface);
+    --dg-gray-line: var(--border-3);
+    --dg-gray-ink: var(--text);
+    --dg-app-bg: var(--surface);
+    --dg-app-line: var(--border-3);
+    --dg-app-ink: var(--text);
+    --dg-sw-bg: var(--surface);
+    --dg-sw-line: var(--border-3);
+    --dg-sw-ink: var(--text);
+    --dg-hw-bg: var(--surface-2);
+    --dg-hw-line: var(--border-3);
+    --dg-hw-ink: var(--text);
+    --dg-kern-bg: var(--surface-2);
+    --dg-kern-line: var(--border-3);
+    --dg-kern-ink: var(--text);
+    --dg-queue-bg: var(--surface-2);
+    --dg-queue-line: var(--border-3);
+    --dg-queue-ink: var(--text);
+    --dg-isr-bg: var(--surface-3);
+    --dg-isr-line: var(--border-3);
+    --dg-isr-ink: var(--text);
+    --dg-warn-bg: var(--surface-3);
+    --dg-warn-line: var(--border-3);
+    --dg-warn-ink: var(--text);
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   ARTICLE READING AIDS
+══════════════════════════════════════════════════════════════════════ */
+/* Sticky bar: one-line title (once the heading is off screen) + progress line */

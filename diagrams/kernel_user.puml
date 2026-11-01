@@ -1,0 +1,8 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>Applications</b>\nuser space" as a <<app>>
+rectangle "<b>Kernel</b>\ndrivers" as k <<kern>>
+rectangle "<b>Hardware</b>" as h <<hw>>
+a --> k : system call
+k --> h
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Device</b>\ngenerates key" as d <<sw>>
+rectangle "<b>Factory CA</b>" as c <<kern>>
+d --> c : CSR
+c --> d : certificate
+@enduml

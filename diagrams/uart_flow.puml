@@ -1,0 +1,12 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>Application Software</b>\n(writes byte)" as a <<app>>
+rectangle "<b>TX FIFO</b>\n(8–16 bytes)" as f <<queue>>
+rectangle "<b>Shift Register</b>\n(parallel → serial)" as s <<kern>>
+rectangle "<b>TX Pin</b>\n(3.3V TTL)" as p <<hw>>
+rectangle "<b>Baud Rate Generator</b>\n(CLK ÷ divisor)" as b <<sw>>
+a -right-> f
+f -right-> s
+s -right-> p
+b -up-> s
+@enduml

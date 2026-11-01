@@ -1,0 +1,8 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>Side channel</b>\nlisten" as s <<kern>>
+rectangle "<b>Chip</b>" as c <<hw>>
+rectangle "<b>Fault attack</b>\ndisturb" as f <<isr>>
+c --> s : timing, power
+f --> c : glitch
+@enduml

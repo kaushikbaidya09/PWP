@@ -140,6 +140,66 @@ TOP 12 PRIORITY ARTICLES
 11. DMA
 12. Linker Scripts
 
+PHASE 7: EMBEDDED CYBERSECURITY
+-------------------------------
+
+29. Security Goals: Confidentiality, Integrity and Authenticity
+30. Symmetric and Asymmetric Keys: Choosing the Right Cryptography
+31. Encryption and Decryption: From AES to Authenticated Encryption
+32. Hashes, MACs and Digital Signatures: Proving Integrity and Authenticity
+33. PKI and X.509 Certificates: How Devices Learn Whom to Trust
+34. TLS: Securing a Connection Step by Step
+35. mTLS and TLS-PSK: Authenticating Both Ends
+36. HSMs and Secure Key Storage: Keeping Private Keys Private
+37. Secure Boot Chain
+38. Device Provisioning
+39. Threat Modelling
+40. Side-Channel and Fault Attacks
+
+PHASE 8: EMBEDDED LINUX
+-----------------------
+
+41. Linux Boot Flow
+42. Kernel vs User Space
+43. Device Tree
+44. Linux Device Drivers
+45. The Yocto Project
+46. Cross-Compilation and Toolchains
+47. POSIX Threads
+48. Linux IPC
+49. systemd for Embedded
+50. Debugging on Linux
+
+PHASE 9: CONNECTIVITY AND PROTOCOLS
+-----------------------------------
+
+51. USB Fundamentals
+52. Bluetooth Low Energy
+53. Ethernet and TCP/IP
+54. MQTT
+55. REST and WebSockets
+56. Protocol Buffers
+57. CAN FD and UDS
+
+PHASE 10: WRITING RELIABLE FIRMWARE
+-----------------------------------
+
+58. C Pitfalls in Embedded
+59. MISRA C
+60. Unit Testing Firmware
+61. Hardware-in-the-Loop Testing
+62. Static Analysis and CI
+63. Low-Level Design
+
+PHASE 11: SHIPPING REAL PRODUCTS
+--------------------------------
+
+64. Hardware Bring-Up
+65. OTA on Embedded Linux
+66. Logging and Field Diagnostics
+67. Embedded GUIs with LVGL
+68. Failover and Fault-Tolerant Design
+
 GOAL
 ----
 These topics form the conceptual backbone of embedded engineering.

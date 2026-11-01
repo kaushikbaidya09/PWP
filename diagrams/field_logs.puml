@@ -1,0 +1,9 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Device</b>\nring log" as d <<hw>>
+rectangle "<b>Upload</b>" as u <<queue>>
+rectangle "<b>Analysis</b>" as a <<app>>
+d --> u
+u --> a
+@enduml

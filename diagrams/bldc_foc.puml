@@ -1,0 +1,22 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>Speed Setpoint</b>\nRPM target" as sp <<app>>
+rectangle "<b>Speed PI</b>\nKp/Ki" as spi <<sw>>
+rectangle "<b>Current PI (d/q)</b>\n@ 20 kHz" as cpi <<sw>>
+rectangle "<b>SVPWM Modulator</b>\n3-phase" as pwm <<kern>>
+rectangle "<b>BLDC Motor</b>\n3-phase" as m <<hw>>
+rectangle "<b>ADC (12-bit)</b>\nPhase currents Ia Ib" as adc <<hw>>
+rectangle "<b>Clarke / Park</b>\nαβ → dq" as cp <<queue>>
+rectangle "<b>BEMF Estimator</b>\nSensorless" as e <<queue>>
+sp -right-> spi
+spi -right-> cpi
+cpi -right-> pwm
+pwm -right-> m
+m -down-> adc
+adc -left-> cp : DMA
+cp -up-> cpi : dq-axis currents
+adc -left-> e
+e -up-> spi : Estimated speed
+footer 0 – 6000 RPM · ±0.5% speed accuracy · CMSIS-DSP fixed-point math · STM32G4 CORDIC accelerator
+title FOC SENSORLESS BLDC DRIVE (STM32G4 · 20 kHz PWM)
+@enduml

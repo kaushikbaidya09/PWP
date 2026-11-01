@@ -1,0 +1,9 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Detect</b>" as a <<isr>>
+rectangle "<b>Switch</b>" as b <<warn>>
+rectangle "<b>Recover</b>" as c <<app>>
+a --> b
+b --> c
+@enduml

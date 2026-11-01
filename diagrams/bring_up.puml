@@ -1,0 +1,11 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Power</b>" as a <<isr>>
+rectangle "<b>Clock</b>" as b <<warn>>
+rectangle "<b>Debug</b>" as c <<kern>>
+rectangle "<b>Peripherals</b>" as d <<sw>>
+a --> b
+b --> c
+c --> d
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Sensor thread</b>" as a <<sw>>
+rectangle "<b>Queue + mutex</b>" as q <<queue>>
+rectangle "<b>Network thread</b>" as b <<sw>>
+a --> q : put
+q --> b : get
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>HOST PC</b>\nGDB / IDE (Keil, IAR, VS Code + cortex-debug)" as h <<app>>
+rectangle "<b>DEBUG PROBE</b>\nJ-Link · ST-LINK · CMSIS-DAP" as p <<sw>>
+rectangle "<b>CoreSight Debug Subsystem</b>\nDAP → AHB-AP → AHB bus\nFPB (breakpoints) · DWT (watchpoints)\nITM (trace) · TPIU → SWO pin" as c <<kern>>
+rectangle "<b>Application CPU + Peripherals</b>" as a <<hw>>
+h --> p : USB (HID / CDC)
+p --> c : JTAG (4–5 pin) or SWD (2 pin)
+c --> a
+@enduml

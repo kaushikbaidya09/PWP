@@ -1,0 +1,8 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>HARDWARE EVENTS</b>\n(Timer overflow · UART Rx · GPIO edge · ADC complete · ...)" as h <<hw>>
+rectangle "<b>FOREGROUND: Interrupt Service Routines</b>\n— minimal work: read register, set flag, push to buffer\n— sets event flags visible to background loop\n— returns control to wherever background was running" as f <<isr>>
+rectangle "<b>BACKGROUND: The Superloop</b>\nwhile(1) {\n    module_buttons_run();   module_sensor_run();\n    module_comms_run();     module_display_run();\n    module_fault_run();\n}" as b <<sw>>
+h --> f : interrupt fires / preempts
+f --> b : ISR sets flag, returns
+@enduml

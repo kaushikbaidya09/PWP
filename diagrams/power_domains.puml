@@ -1,0 +1,18 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>VDD POWER DOMAIN</b>" as v <<hw>> {
+  rectangle "<b>CPU</b>\nCortex-M" as c <<sw>>
+  rectangle "<b>Peripherals</b>\nAHB / APB" as p <<queue>>
+  rectangle "<b>SRAM1 / SRAM2</b>" as s <<kern>>
+  c -[hidden]right- p
+  p -[hidden]right- s
+}
+rectangle "<b>ALWAYS-ON DOMAIN (VBAT / VSW)</b>" as a <<warn>> {
+  rectangle "<b>RTC</b>" as r
+  rectangle "<b>LSE</b>" as l
+  rectangle "<b>Backup Registers</b>" as b
+  r -[hidden]right- l
+  l -[hidden]right- b
+}
+p -[hidden]down- l
+@enduml

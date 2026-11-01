@@ -1,0 +1,11 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Tester</b>" as t <<app>>
+rectangle "<b>UDS</b>" as u <<kern>>
+rectangle "<b>ISO-TP</b>" as i <<queue>>
+rectangle "<b>CAN FD</b>" as c <<hw>>
+t --> u
+u --> i
+i --> c
+@enduml

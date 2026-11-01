@@ -1,0 +1,152 @@
+---
+import Base from '../layouts/Base.astro';
+import Card from '../components/Card.astro';
+import Icon from '../components/Icon.astro';
+import LayoutToggle from '../components/LayoutToggle.astro';
+import about from '../data/about.json';
+import contact from '../data/contact.json';
+import { published, titleOf, pad } from '../lib/content';
+import { url } from '../lib/url';
+import { render } from 'astro:content';
+
+const journey = await Promise.all(
+    (await published('journey', { needsBody: false })).map(async (m) => ({ m, Body: (await render(m)).Content }))
+);
+const socials = contact.links.filter((l) => l.href && (l.type === 'github' || l.type === 'linkedin'));
+const s = about.sections;
+const skills = about.skills as Record<string, string[]>;
+---
+
+<Base title={about.meta.title} description={about.meta.description} active="about">
+    <section id="hero" class="hero">
+        <div class="container hero__grid">
+            <div class="hero__intro" data-reveal>
+                <h1 class="hero__name">{about.name.first} <span class="hero__surname">{about.name.last}</span></h1>
+                <p class="hero__headline">{about.headline}</p>
+                <p class="hero__bio">{about.bio}</p>
+                <div class="hero__actions">
+                    <a href={url('/projects/')} class="btn btn--primary">View projects</a>
+                    <a href={url('/contact/')} class="btn btn--gray">Get in touch</a>
+                    {
+                        socials.map((l) => (
+                            <a href={l.href} class="hero__social" target="_blank" rel="noopener noreferrer" aria-label={`${l.label} (opens in new tab)`}>
+                                <Icon name={l.type as 'github'} size={20} />
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <div class="panel" data-reveal>
+                <div class="panel__bar" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                    <code>cat /proc/engineer</code>
+                </div>
+                <dl class="hero__facts">
+                    {
+                        about.status.map((st) => (
+                            <div>
+                                <dt>{st.label}</dt>
+                                <dd>{st.value}</dd>
+                            </div>
+                        ))
+                    }
+                </dl>
+                <ul class="hero__stack" aria-label="Core stack">{about.tags.map((t) => <li class="tag">{t}</li>)}</ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="section journey">
+        <div class="container">
+            <div class="about-section-head" data-reveal>
+                <span class="about-eyebrow">{s.journey.eyebrow}</span>
+                <div class="journey__title-row">
+                    <h2 class="about-title">{s.journey.title}</h2>
+                    <LayoutToggle />
+                </div>
+                <p class="about-desc">{s.journey.desc}</p>
+            </div>
+            <ol class="card-list" data-reveal>
+                {
+                    journey.map(({ m, Body }, i) => (
+                        <Card num={pad(i + 1)} title={titleOf(m)} brief={m.data.brief} tags={m.data.tags}>
+                            <div class="card__brief card__more">
+                                <Body />
+                            </div>
+                        </Card>
+                    ))
+                }
+            </ol>
+        </div>
+    </section>
+
+    <section id="skills" class="section skills">
+        <div class="container">
+            <div class="about-section-head" data-reveal>
+                <span class="about-eyebrow">{s.skills.eyebrow}</span>
+                <h2 class="about-title">{s.skills.title}</h2>
+                <p class="about-desc">{s.skills.desc}</p>
+            </div>
+            <div class="skills__tabs" role="tablist" aria-label="Skill categories" data-reveal>
+                {
+                    about.skillTabs.map((tab, i) => (
+                        <button
+                            class:list={['skills-tab', { 'skills-tab--active': i === 0 }]}
+                            role="tab"
+                            id={`tab-${tab.key}`}
+                            aria-controls={`panel-${tab.key}`}
+                            aria-selected={i === 0 ? 'true' : 'false'}
+                            data-cat={tab.key}
+                        >
+                            {tab.label}
+                        </button>
+                    ))
+                }
+            </div>
+            {
+                about.skillTabs.map((tab, i) => (
+                    <div
+                        class="skills__panel"
+                        id={`panel-${tab.key}`}
+                        role="tabpanel"
+                        aria-labelledby={`tab-${tab.key}`}
+                        hidden={i !== 0}
+                        data-reveal
+                    >
+                        <ul class="skill-chips">
+                            {(skills[tab.key] || []).map((name) => (
+                                <li class="tag">{name}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))
+            }
+        </div>
+    </section>
+
+    <section id="dashboard" class="section dashboard">
+        <div class="container">
+            <div class="about-section-head" data-reveal>
+                <span class="about-eyebrow">{s.stats.eyebrow}</span>
+                <h2 class="about-title">{s.stats.title}</h2>
+                <p class="about-desc">{s.stats.desc}</p>
+            </div>
+            <div class="dashboard__grid" data-reveal>
+                {
+                    about.stats.map((st) => (
+                        <div class="stat-card">
+                            <div class="stat-card__value"><span data-count={st.count}>{st.count}</span>{st.suffix}</div>
+                            <div class="stat-card__label">{st.label}</div>
+                            <div class="stat-card__sub">{st.sub}</div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</Base>
+
+<script>
+    import '../scripts/home.ts';
+</script>

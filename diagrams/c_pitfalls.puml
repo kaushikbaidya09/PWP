@@ -1,0 +1,9 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Your C code</b>" as c <<sw>>
+rectangle "<b>Compiler</b>\nassumes no rule breaks" as o <<kern>>
+rectangle "<b>Machine code</b>" as m <<hw>>
+c --> o
+o --> m
+@enduml

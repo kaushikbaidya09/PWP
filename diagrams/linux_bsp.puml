@@ -1,0 +1,23 @@
+@startuml
+!include _theme.iuml
+title LINUX BSP LAYER STACK (i.MX8 · Yocto Kirkstone)
+rectangle s [
+$APP <b>User Applications</b> — Qt · Python · OpenCV |
+$SW <b>System Services</b> — systemd · D-Bus · NetworkManager |
+$SW <b>C Library</b> — glibc / musl |
+$KERN <b>Linux Kernel</b> — 6.1 LTS + custom device drivers |
+$QUEUE <b>Device Tree</b> — i.MX8MQ + board overlay |
+$WARN <b>U-Boot Bootloader</b> — SPL + main · secure boot |
+$HW <b>ARM Trusted Firmware</b> — BL1/BL2/BL31 · TrustZone |
+]
+rectangle y [
+$GRAY <b>YOCTO LAYERS</b> |
+$KERN <b>meta-avench-bsp</b> — Custom board layer |
+$QUEUE <b>meta-imx</b> — NXP i.MX8 support |
+$SW <b>meta-openembedded</b> — OE core recipes |
+$SW <b>openembedded-core</b> — Poky base |
+$HW <b>Custom Kernel Drivers</b> — MIPI CSI-2 · PCIe · USB3 · CAN FD |
+$GRAY Platform: ARM Device Tree bindings |
+]
+s -[hidden]right- y
+@enduml

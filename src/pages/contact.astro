@@ -1,0 +1,111 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import c from '../data/contact.json';
+import { url } from '../lib/url';
+
+/* Links without an href in contact.json are not shown. */
+const links = c.links.filter((l) => l.href);
+---
+
+<Base title={c.meta.title} description={c.meta.description} active="contact">
+    <section class="contact-page">
+        <div class="container contact-page__grid">
+            <div class="contact-page__intro" data-reveal>
+                <p class="contact-page__eyebrow">{c.hero.eyebrow}</p>
+                <h1 class="contact-page__title">{c.hero.title}</h1>
+                <p class="contact-page__lead">{c.intro}</p>
+                <ul class="contact__links" aria-label="Contact links">
+                    {
+                        links.map((l) => (
+                            <li>
+                                <a
+                                    href={l.href}
+                                    class="contact-link"
+                                    target={l.external ? '_blank' : undefined}
+                                    rel={l.external ? 'noopener noreferrer' : undefined}
+                                    download={l.download ? '' : undefined}
+                                >
+                                    <div class="contact-link__icon">
+                                        <Icon name={l.type as 'email'} size={20} />
+                                    </div>
+                                    <div class="contact-link__body">
+                                        <div class="contact-link__label">{l.label}</div>
+                                        <div class="contact-link__value">{l.value}</div>
+                                    </div>
+                                    <Icon name="arrow" size={16} stroke={2} class="contact-link__arrow" />
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <p class="contact-page__meta">
+                    <span><Icon name="pin" size={14} stroke={2} /> {c.availability.location}</span>
+                    <span><Icon name="clock" size={14} stroke={2} /> {c.availability.timezone}</span>
+                </p>
+            </div>
+
+            <div class="contact-page__side" data-reveal>
+                <!-- Shown by site.ts once /api/health answers; stays hidden if the contact service is down. -->
+                <form class="contact-form panel" id="contact-form" action={url('/api/contact')} data-health={url('/api/health')} method="post" novalidate hidden>
+                    <div class="panel__bar" aria-hidden="true">
+                        <span></span><span></span><span></span>
+                        <code>./send_message</code>
+                    </div>
+                    <h2 class="sr-only">{c.form.title}</h2>
+                    <div class="contact-form__fields">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name" class="form-label">Name <span aria-hidden="true">*</span></label>
+                                <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your name" required maxlength="120" autocomplete="name" />
+                                <div class="form-error" id="name-error" aria-live="polite"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email" class="form-label">Email <span aria-hidden="true">*</span></label>
+                                <input type="email" id="contact-email" name="email" class="form-input" placeholder="your@email.com" required maxlength="200" autocomplete="email" />
+                                <div class="form-error" id="email-error" aria-live="polite"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject" class="form-label">Subject</label>
+                            <select id="contact-subject" name="subject" class="form-input form-select">
+                                <option value="">Select a topic…</option>
+                                <option value="fulltime">Full-time opportunity</option>
+                                <option value="consulting">Consulting / contract work</option>
+                                <option value="collaboration">Project collaboration</option>
+                                <option value="question">Technical question</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message" class="form-label">Message <span aria-hidden="true">*</span></label>
+                            <textarea id="contact-message" name="message" class="form-input form-textarea" rows="6" maxlength="5000" placeholder="Tell me about the project, role, or question…" required></textarea>
+                            <div class="form-error" id="message-error" aria-live="polite"></div>
+                        </div>
+                        <!-- honeypot: real visitors never see or fill this -->
+                        <div class="hp" aria-hidden="true">
+                            <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full" id="contact-submit">
+                            <span class="btn-text">{c.form.submitLabel}</span>
+                            <span class="btn-loading" hidden><Icon name="spinner" size={16} stroke={2} /> Sending…</span>
+                        </button>
+                        <div class="form-success" id="form-success" hidden role="status">
+                            <Icon name="check" size={20} stroke={2} />
+                            <span>{c.form.successMsg}</span>
+                        </div>
+                        <div class="form-error-global" id="form-error-global" hidden role="alert">
+                            <Icon name="alert" size={20} stroke={2} />
+                            <span>{c.form.errorMsg}</span>
+                        </div>
+                    </div>
+                </form>
+                <p class="contact__offline" id="contact-offline">{c.form.unavailableMsg}</p>
+            </div>
+        </div>
+    </section>
+</Base>
+
+<script>
+    import '../scripts/contact.ts';
+</script>

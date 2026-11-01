@@ -1,0 +1,16 @@
+{
+    "meta": {
+        "title": "Projects",
+        "description": "Engineering case studies - embedded systems projects with documented decisions, trade-offs, and outcomes."
+    },
+    "pageLeft": {
+        "titleParts": ["Engineering", "Projects"],
+        "sub": "Case Studies"
+    },
+    "hero": {
+        "desc": "Production firmware and systems work, each shown with its system architecture."
+    },
+    "section": {
+        "label": "Case Studies"
+    }
+}

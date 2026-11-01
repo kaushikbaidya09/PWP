@@ -1,0 +1,10 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>Application</b>" as a <<app>>
+rectangle "<b>/dev/mydev</b>" as d <<queue>>
+rectangle "<b>Driver</b>" as k <<kern>>
+rectangle "<b>Hardware</b>" as h <<hw>>
+a --> d : read / write
+d --> k
+k --> h : registers
+@enduml

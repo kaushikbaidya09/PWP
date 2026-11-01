@@ -1,0 +1,12 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>MCU (SPI Master)</b>\nSCK · MOSI · MISO\nCS0 · CS1 · CS2" as m <<kern>>
+rectangle "Shared SCK / MOSI / MISO bus" as b <<hw>>
+rectangle "<b>Device 0</b>\n(CS0)" as d0 <<queue>>
+rectangle "<b>Device 1</b>\n(CS1)" as d1 <<queue>>
+rectangle "<b>Device 2</b>\n(CS2)" as d2 <<queue>>
+m <--> b
+b <--> d0 : CS0
+b <--> d1 : CS1
+b <--> d2 : CS2
+@enduml

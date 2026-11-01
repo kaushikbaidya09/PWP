@@ -1,0 +1,20 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>NODE A (ECU)</b>\nSTM32F4" as a <<sw>>
+rectangle "<b>NODE B (BCM)</b>\nSTM32G0" as b <<sw>>
+rectangle "<b>NODE C (ABS)</b>\ndsPIC33" as c <<sw>>
+rectangle "<b>NODE D (DASH)</b>\nCustom MCU" as d <<sw>>
+rectangle "CAN Controller\nTJA1050" as ca <<queue>>
+rectangle "CAN Controller\nTJA1050" as cb <<queue>>
+rectangle "CAN Controller\nMCP2551" as cc <<queue>>
+rectangle "CAN Controller\nTJA1050" as cd <<queue>>
+rectangle "<b>CAN BUS</b> — CANH / CANL differential pair — 120Ω terminators at each end" as bus <<hw>>
+a --> ca
+b --> cb
+c --> cc
+d --> cd
+ca <--> bus
+cb <--> bus
+cc <--> bus
+cd <--> bus
+@enduml

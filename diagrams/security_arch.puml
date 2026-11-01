@@ -1,0 +1,15 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>APPLICATION PROCESSOR</b>" as ap <<hw>> {
+  rectangle "<b>SECURE WORLD (TrustZone)</b>\nKey storage\nCrypto operations\nAttestation & sealing" as s <<isr>>
+  rectangle "<b>NORMAL WORLD</b>\nRTOS / bare-metal app\nPeripheral drivers\nApplication logic" as n <<sw>>
+  s -[hidden]right- n
+}
+rectangle "<b>SECURE BOOTLOADER</b>\n(ROM or signed first-stage)" as b <<kern>>
+rectangle "<b>INTERNAL FLASH</b>\n(CRP enabled)\nSigned firmware" as f <<sw>>
+rectangle "<b>SECURE ELEMENT</b>\nexternal IC or\nembedded HSM" as e <<isr>>
+s --> b
+n --> b
+b --> f
+b --> e
+@enduml

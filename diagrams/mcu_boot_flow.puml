@@ -1,0 +1,12 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>POWER ON / RESET</b>\n(internal RC, registers cleared)" as p <<hw>>
+rectangle "<b>Vector Table Fetch</b>\nWord 0: Initial SP\nWord 1: Reset Handler addr" as v <<kern>>
+rectangle "<b>Reset Handler</b>\n— copy .data flash → RAM\n— zero .bss in RAM\n— optional: SystemInit()" as r <<sw>>
+rectangle "<b>C Runtime Init</b>\n__libc_init_array() / C++ ctors" as c <<sw>>
+rectangle "<b>main()</b>" as m <<app>>
+p --> v
+v --> r
+r --> c
+c --> m
+@enduml

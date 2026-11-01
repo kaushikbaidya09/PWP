@@ -1,0 +1,35 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "Button GPIO" as s1 <<hw>>
+rectangle "UART RX" as s2 <<hw>>
+rectangle "Timer TIM2" as s3 <<hw>>
+rectangle "ADC EOC" as s4 <<hw>>
+rectangle "SPI TC" as s5 <<hw>>
+rectangle "EXTI ISR" as i1 <<isr>>
+rectangle "USART ISR" as i2 <<isr>>
+rectangle "TIM ISR" as i3 <<isr>>
+rectangle "ADC ISR" as i4 <<isr>>
+rectangle "SPI ISR" as i5 <<isr>>
+rectangle "<b>EVENT QUEUE</b>\nFIFO" as q <<queue>>
+rectangle "<b>event_loop()</b>" as l <<app>>
+rectangle "btn_handler()" as h1 <<app>>
+rectangle "uart_handler()" as h2 <<app>>
+rectangle "adc_handler()" as h3 <<app>>
+rectangle "tick_handler()" as h4 <<app>>
+s1 --> i1 : IRQ
+s2 --> i2 : IRQ
+s3 --> i3 : IRQ
+s4 --> i4 : IRQ
+s5 --> i5 : IRQ
+i1 --> q : post()
+i2 --> q : post()
+i3 --> q : post()
+i4 --> q : post()
+i5 --> q : post()
+q --> l
+l --> h1
+l --> h2
+l --> h3
+l --> h4
+@enduml

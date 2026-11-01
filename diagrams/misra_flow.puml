@@ -1,0 +1,11 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Code</b>" as c <<sw>>
+rectangle "<b>Rule checker</b>" as t <<kern>>
+rectangle "<b>Fix</b>" as f <<app>>
+rectangle "<b>Recorded</b>\n<b>deviation</b>" as d <<warn>>
+c --> t
+t --> f
+t --> d
+@enduml

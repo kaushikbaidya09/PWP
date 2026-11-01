@@ -1,0 +1,12 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>Application Firmware</b>\n[Task 1]\n[Task 2]\n[Task 3]" as a <<app>>
+rectangle "<b>Watchdog Timer (IWDG / WWDG)</b>\nDown-counter\nLSI / IWDG oscillator" as w <<kern>>
+rectangle "<b>Reset Logic</b>\n(RST pin)" as r <<isr>>
+rectangle "<b>Log reset cause</b>\n(backup register)" as l <<warn>>
+rectangle "<b>Execute recovery sequence</b>" as e <<sw>>
+a -right-> w : periodic kick
+w -down-> r : counter expires
+r -down-> l
+l -down-> e
+@enduml

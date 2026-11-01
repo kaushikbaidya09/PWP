@@ -1,0 +1,9 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Layers</b>\nrecipes" as l <<sw>>
+rectangle "<b>BitBake</b>" as b <<kern>>
+rectangle "<b>Image</b>" as i <<hw>>
+l --> b
+b --> i
+@enduml

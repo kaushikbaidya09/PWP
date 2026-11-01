@@ -1,0 +1,11 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>What are we</b>\n<b>building?</b>" as a <<sw>>
+rectangle "<b>What can</b>\n<b>go wrong?</b>" as b <<isr>>
+rectangle "<b>What will</b>\n<b>we do?</b>" as c <<kern>>
+rectangle "<b>Did it</b>\n<b>work?</b>" as d <<app>>
+a --> b
+b --> c
+c --> d
+@enduml

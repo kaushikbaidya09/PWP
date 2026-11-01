@@ -1,0 +1,89 @@
+' Shared diagram style. The hex values are placeholders: scripts/theme-diagrams.mjs
+' swaps them for --dg-* tokens so the rendered SVG follows the site's light/dark theme.
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName "SansSerif"
+skinparam defaultFontSize 13
+skinparam roundCorner 20
+skinparam Padding 4
+skinparam nodesep 40
+skinparam ranksep 46
+skinparam TitleFontColor #111827
+skinparam TitleFontSize 13
+skinparam FooterFontColor #9ca3af
+skinparam FooterFontSize 11
+skinparam ArrowColor #6b7280
+skinparam ArrowThickness 1
+skinparam ArrowFontColor #9ca3af
+skinparam ArrowFontSize 11
+skinparam rectangle {
+    BackgroundColor #f9fafb
+    BorderColor #374151
+    FontColor #111827
+    BorderThickness 1
+    StereotypeFontSize 0
+}
+skinparam rectangle<<hw>> {
+    BackgroundColor #dbeafe
+    BorderColor #1d4ed8
+    FontColor #1e3a8a
+}
+skinparam rectangle<<sw>> {
+    BackgroundColor #d1fae5
+    BorderColor #065f46
+    FontColor #064e3b
+}
+skinparam rectangle<<kern>> {
+    BackgroundColor #ede9fe
+    BorderColor #5b21b6
+    FontColor #4c1d95
+}
+skinparam rectangle<<isr>> {
+    BackgroundColor #fee2e2
+    BorderColor #991b1b
+    FontColor #7f1d1d
+}
+skinparam rectangle<<queue>> {
+    BackgroundColor #cffafe
+    BorderColor #0e7490
+    FontColor #164e63
+}
+skinparam rectangle<<warn>> {
+    BackgroundColor #fef3c7
+    BorderColor #92400e
+    FontColor #78350f
+}
+skinparam rectangle<<app>> {
+    BackgroundColor #dcfce7
+    BorderColor #166534
+    FontColor #14532d
+}
+hide stereotype
+skinparam sequence {
+    ParticipantBackgroundColor #f9fafb
+    ParticipantBorderColor #374151
+    ParticipantFontColor #111827
+    LifeLineBorderColor #6b7280
+}
+skinparam SequenceMessageAlign center
+skinparam note {
+    BackgroundColor #eef0f4
+    BorderColor #374151
+    FontColor #111827
+}
+skinparam hexagon {
+    BackgroundColor #fef3c7
+    BorderColor #92400e
+    FontColor #78350f
+    BorderThickness 1
+}
+
+' Rows for stacked layouts (memory maps, layer stacks): one table, equal widths
+!$HW = "<#dbeafe>|<color:#1e3a8a>"
+!$SW = "<#d1fae5>|<color:#064e3b>"
+!$KERN = "<#ede9fe>|<color:#4c1d95>"
+!$ISR = "<#fee2e2>|<color:#7f1d1d>"
+!$QUEUE = "<#cffafe>|<color:#164e63>"
+!$WARN = "<#fef3c7>|<color:#78350f>"
+!$APP = "<#dcfce7>|<color:#14532d>"
+!$GRAY = "<#f9fafb>|<color:#111827>"

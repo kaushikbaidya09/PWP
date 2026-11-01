@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import Article from '../../components/Article.astro';
+import { published, titleOf } from '../../lib/content';
+import { url } from '../../lib/url';
+import { render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const all = await published('projects', { needsBody: false });
+    return all.map((entry, i) => ({ params: { id: entry.id }, props: { entry, prev: all[i - 1], next: all[i + 1] } }));
+}
+const { entry, prev, next } = Astro.props;
+const { Content, headings } = await render(entry);
+const title = titleOf(entry);
+const link = (e?: typeof entry) => e && { href: url(`/projects/${e.id}/`), title: titleOf(e) };
+---
+
+<Base title={`${title} — Projects`} description={entry.data.brief} active="projects">
+    <Article
+        title={title}
+        brief={entry.data.brief}
+        crumbs={[{ href: url('/projects/'), title: 'Projects' }]}
+        meta={[]}
+        tags={entry.data.tags}
+        headings={headings}
+        prev={link(prev)}
+        next={link(next)}
+    >
+        <Content />
+    </Article>
+</Base>

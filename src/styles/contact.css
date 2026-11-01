@@ -1,0 +1,98 @@
+/* Contact page */
+
+.contact-page {
+    padding: 72px 0;
+}
+.contact-page__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: clamp(40px, 6vw, 88px);
+    align-items: start;
+}
+.contact-page__eyebrow {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-4);
+}
+.contact-page__title {
+    margin-top: 14px;
+    font-size: clamp(38px, 4.6vw, 60px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.06;
+    color: var(--text);
+}
+.contact-page__lead {
+    margin-top: 18px;
+    max-width: 46ch;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text-3);
+}
+.contact__links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 32px;
+    list-style: none;
+}
+.contact-page__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin-top: 22px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-4);
+}
+.contact-page__meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+.contact-form__fields {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}
+.contact-form__fields > .btn {
+    margin-top: 4px;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+.form-success,
+.form-error-global {
+    margin-top: 14px;
+}
+.contact__offline {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    color: var(--text-3);
+    line-height: 1.6;
+}
+.contact-form:not([hidden]) + .contact__offline {
+    display: none;
+}
+@media (max-width: 960px) {
+    .contact-page {
+        padding: 44px 0;
+    }
+    .contact-page__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+@media (max-width: 520px) {
+    .form-row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+    .contact-form__fields {
+        padding: 18px;
+    }
+}

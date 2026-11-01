@@ -1,0 +1,12 @@
+@startuml
+!include _theme.iuml
+rectangle "<b>Motor Task</b>\nPriority 3" as a <<app>>
+rectangle "<b>Comms Task</b>\nPriority 2" as b <<app>>
+rectangle "<b>UI Task</b>\nPriority 1" as c <<app>>
+rectangle "<b>RTOS KERNEL</b>\nScheduler · Context Switch · Tick Timer" as k <<kern>>
+rectangle "<b>HARDWARE</b>\nSysTick · NVIC · Peripherals · SRAM" as h <<hw>>
+a --> k
+b --> k : blocking API / notifications
+c --> k
+k --> h : hardware events / ISR
+@enduml

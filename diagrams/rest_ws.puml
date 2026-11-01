@@ -1,0 +1,8 @@
+@startuml
+!include _theme.iuml
+participant "Device" as D
+participant "Server" as S
+D -> S : REST request
+S -> D : response
+D <-> S : WebSocket
+@enduml

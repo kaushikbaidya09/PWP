@@ -1,0 +1,13 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Boot ROM</b>" as a <<isr>>
+rectangle "<b>SPL</b>\nDRAM setup" as b <<kern>>
+rectangle "<b>U-Boot</b>" as c <<kern>>
+rectangle "<b>Kernel</b>" as d <<hw>>
+rectangle "<b>Init</b>" as e <<sw>>
+a --> b
+b --> c
+c --> d
+d --> e
+@enduml

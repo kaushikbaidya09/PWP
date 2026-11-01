@@ -1,0 +1,10 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>.proto schema</b>" as p <<queue>>
+rectangle "<b>Device</b>" as d <<sw>>
+rectangle "<b>Server</b>" as s <<kern>>
+p --> d : generated code
+p --> s : generated code
+d --> s : binary message
+@enduml

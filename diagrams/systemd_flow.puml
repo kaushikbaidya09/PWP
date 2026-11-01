@@ -1,0 +1,10 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Kernel</b>" as k <<kern>>
+rectangle "<b>systemd</b>" as s <<queue>>
+rectangle "<b>Services</b>" as a <<sw>>
+k --> s
+s --> a : start
+a --> s : crash
+@enduml

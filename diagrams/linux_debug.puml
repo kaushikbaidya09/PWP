@@ -1,0 +1,13 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Crash</b>" as a <<isr>>
+rectangle "<b>Hang</b>" as b <<warn>>
+rectangle "<b>Slow</b>" as c <<queue>>
+rectangle "GDB + core dump" as x <<sw>>
+rectangle "strace" as y <<sw>>
+rectangle "perf" as z <<sw>>
+c --> z
+b --> y
+a --> x
+@enduml

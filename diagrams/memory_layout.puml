@@ -1,0 +1,12 @@
+@startuml
+!include _theme.iuml
+rectangle m [
+$HW <b>FLASH (Read-Only Code)</b>  .text · .rodata — MPU: read + execute only, write faults |
+$SW <b>SRAM</b> — .data (initialized globals)  .bss (zero-initialized globals) |
+$QUEUE <b>Heap</b> (dynamic allocation) — canary at heap boundary |
+$KERN <b>Task A Stack</b> [CANARY at bottom] — MPU: no-access below canary |
+$KERN <b>Task B Stack</b> [CANARY at bottom] — MPU: no-access below canary |
+$ISR <b>ISR / Main Stack (MSP)</b> [CANARY at bottom] |
+$WARN <b>Peripheral Registers (Memory-Mapped)</b> — MPU: privileged access only from user tasks |
+]
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>TRANSMITTER</b>" as t <<sw>> {
+  rectangle "CPU / DMA" as c1 <<kern>>
+  rectangle "<b>TX Shift Register</b>\n(Serialize\nparallel → serial)" as tx <<hw>>
+  c1 --> tx : parallel
+}
+rectangle "<b>PHYSICAL WIRE(S)</b>\nSync: DATA + CLOCK lines\nAsync: DATA line only" as w <<queue>>
+rectangle "<b>RECEIVER</b>" as r <<sw>> {
+  rectangle "<b>RX Shift Register</b>\n(Deserialize\nserial → parallel)" as rx <<hw>>
+  rectangle "CPU / DMA" as c2 <<kern>>
+  rx --> c2 : parallel
+}
+tx --> w : serial bits
+w --> rx : serial bits
+@enduml

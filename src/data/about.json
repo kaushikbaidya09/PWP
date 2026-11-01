@@ -1,0 +1,154 @@
+{
+    "meta": {
+        "title": "Kaushik Baidya | Embedded Software Engineer",
+        "description": "Embedded software engineer in Bangalore building Embedded Linux middleware, RTOS firmware and embedded security: Yocto, C, OpenSSL, TLS and HSM-backed device identity."
+    },
+    "name": {
+        "first": "Kaushik",
+        "last": "Baidya"
+    },
+    "bio": "Multithreaded C on NXP i.MX 9 and Yocto Linux, from device drivers and LVGL interfaces to hardware-backed device identity and secure updates. Currently at Avench Systems, where I also lead a development team.",
+    "tags": ["C / C++", "Embedded Linux", "Yocto", "RTOS", "Embedded Security", "LVGL"],
+    "status": [
+        {
+            "label": "role",
+            "value": "Embedded Software Engineer"
+        },
+        {
+            "label": "company",
+            "value": "Avench Systems"
+        },
+        {
+            "label": "experience",
+            "value": "3+ years"
+        },
+        {
+            "label": "focus",
+            "value": "Embedded Linux, RTOS, Security"
+        },
+        {
+            "label": "location",
+            "value": "Bangalore, India"
+        }
+    ],
+    "sections": {
+        "journey": {
+            "eyebrow": "01 / Experience",
+            "title": "Experience & Education",
+            "desc": "Where I have built firmware and Embedded Linux software, and where I trained."
+        },
+        "skills": {
+            "eyebrow": "02 / Skills",
+            "title": "Technical Skills",
+            "desc": "Languages, platforms, security and interfaces I use in production work."
+        },
+        "stats": {
+            "eyebrow": "03 / Impact",
+            "title": "Selected Results",
+            "desc": "Numbers from shipped work."
+        }
+    },
+    "skillTabs": [
+        {
+            "key": "languages",
+            "label": "Languages"
+        },
+        {
+            "key": "systems",
+            "label": "Systems"
+        },
+        {
+            "key": "security",
+            "label": "Security"
+        },
+        {
+            "key": "interfaces",
+            "label": "Interfaces"
+        },
+        {
+            "key": "practices",
+            "label": "Practices"
+        },
+        {
+            "key": "tools",
+            "label": "Tools & Platforms"
+        }
+    ],
+    "skills": {
+        "languages": ["C", "C++", "Python", "Bash"],
+        "systems": ["Embedded Linux", "Yocto Project", "RTOS", "POSIX Threads", "Device Driver Integration"],
+        "security": [
+            "OpenSSL",
+            "mbedTLS",
+            "X.509 PKI",
+            "TLS",
+            "Mutual TLS (mTLS)",
+            "CRL",
+            "CSR",
+            "ECC",
+            "Digital Signatures",
+            "HSM"
+        ],
+        "interfaces": [
+            "CAN",
+            "Bluetooth",
+            "UART",
+            "SPI",
+            "I2C",
+            "USB",
+            "GPIO",
+            "DMA",
+            "REST APIs",
+            "WebSockets",
+            "Protocol Buffers"
+        ],
+        "practices": [
+            "MISRA C",
+            "CWE",
+            "Unit Testing",
+            "Low-Level Design (LLD)",
+            "Code Reviews",
+            "Event-Driven State Machines",
+            "Team Leadership",
+            "Mentoring"
+        ],
+        "tools": [
+            "NXP i.MX 9 (Arm)",
+            "AVR MCUs",
+            "LVGL",
+            "CMake",
+            "Git",
+            "GitHub",
+            "GDB",
+            "Debian Packaging",
+            "VS Code"
+        ]
+    },
+    "stats": [
+        {
+            "count": 3,
+            "suffix": "+",
+            "label": "Years Experience",
+            "sub": "Embedded Linux & RTOS"
+        },
+        {
+            "count": 50,
+            "suffix": "%",
+            "label": "Less UI Dev Time",
+            "sub": "Build & asset automation"
+        },
+        {
+            "count": 1000,
+            "suffix": "+",
+            "label": "Sensors Supported",
+            "sub": "Pipeline inspection firmware"
+        },
+        {
+            "count": 20,
+            "suffix": " MB/s",
+            "label": "SD Card Logging",
+            "sub": "Fault-tolerant RTOS + DMA"
+        }
+    ],
+    "headline": "I build Embedded Linux middleware, RTOS firmware and the security that protects them."
+}

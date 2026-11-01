@@ -1,0 +1,10 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Device</b>" as d2 <<sw>>
+rectangle "<b>Server</b>" as s2 <<kern>>
+rectangle "<b>Device</b>" as d1 <<sw>>
+rectangle "<b>Server</b>" as s1 <<kern>>
+d2 --> s2 : TLS-PSK: shared key
+d1 --> s1 : mTLS: certificate
+@enduml

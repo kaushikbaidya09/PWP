@@ -1,0 +1,22 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>HSE</b>\n4–26 MHz crystal" as hse <<hw>>
+rectangle "<b>HSI</b>\n16 MHz internal RC" as hsi <<hw>>
+rectangle "<b>LSE</b>\n32.768 kHz" as lse <<queue>>
+rectangle "<b>LSI</b>\n~32 kHz RC" as lsi <<queue>>
+rectangle "<b>PLL</b>" as pll <<kern>>
+rectangle "<b>SYSCLK</b>\n168 MHz" as sys <<sw>>
+rectangle "<b>CPU Core</b>" as cpu <<app>>
+rectangle "<b>AHB Bus</b>\n÷ 1..512" as ahb <<sw>>
+rectangle "<b>APB1 (slow)</b>\n÷ 1..16\nUSART2-5, I2C\nSPI2-3, DAC" as a1 <<isr>>
+rectangle "<b>APB2 (fast)</b>\n÷ 1..16\nUSART1/6\nSPI1, ADC" as a2 <<isr>>
+hse --> pll
+hsi --> pll
+pll --> sys
+sys --> cpu
+sys --> ahb
+ahb --> a1
+ahb --> a2
+lse -[hidden]-> lsi
+@enduml

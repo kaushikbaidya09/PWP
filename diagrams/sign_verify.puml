@@ -1,0 +1,11 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Firmware</b>" as f <<sw>>
+rectangle "<b>Sign</b>\nprivate key" as s <<isr>>
+rectangle "<b>Verify</b>\npublic key" as v <<hw>>
+rectangle "<b>Boot</b>" as b <<app>>
+f --> s
+s --> v
+v --> b
+@enduml

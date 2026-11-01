@@ -1,0 +1,9 @@
+@startuml
+!include _theme.iuml
+left to right direction
+rectangle "<b>Asymmetric</b>\nagree on a secret" as a <<kern>>
+rectangle "<b>Session key</b>" as k <<queue>>
+rectangle "<b>Symmetric</b>\nencrypt the data" as s <<sw>>
+a --> k
+k --> s
+@enduml

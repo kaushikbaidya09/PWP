@@ -1,0 +1,24 @@
+---
+interface Props {
+    num: string;
+    title: string;
+    brief: string;
+    tags?: string[];
+    href?: string;
+    heading?: 'h2' | 'h3';
+}
+const { num, title, brief, tags = [], href, heading: H = 'h3' } = Astro.props;
+const Tag = href ? 'a' : 'article';
+---
+
+<li>
+    <Tag class:list={['card', { 'card--static': !href }]} href={href}>
+        <span class="card__num">{num}</span>
+        <div class="card__body">
+            <H class="card__title">{title}</H>
+            <p class="card__brief">{brief}</p>
+            {tags.length > 0 && <ul class="card__tags">{tags.map((t) => <li class="tag">{t}</li>)}</ul>}
+            <slot />
+        </div>
+    </Tag>
+</li>
