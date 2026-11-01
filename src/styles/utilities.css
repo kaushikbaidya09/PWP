@@ -148,3 +148,10 @@ a.card {
     gap: 10px;
     margin-top: 10px;
 }
+
+/* Animated diagrams show as a complete still image when motion is reduced */
+@media (prefers-reduced-motion: reduce) {
+    svg.diagram * {
+        animation: none !important;
+    }
+}

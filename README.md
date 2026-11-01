@@ -94,7 +94,7 @@ Intro paragraph…
 - `phase` is 1–11. Phase names are in `src/lib/content.ts`.
 - The `## Summary` becomes the **In short** box, and reference sections fold away. The full list is in `src/lib/markdown/sections.mjs`.
 - Standard Markdown tables work and scroll sideways on phones.
-- Items under `## Related Topics` that start with an article's name become links.
+- Every item under `## Related Topics` must start with an article's name, and becomes a link. The build fails if one does not match.
 
 ### Blog post: `src/content/blog/my-post.md`
 
@@ -135,6 +135,10 @@ The next home-server build renders it. Commit the generated SVG too, as GitHub P
 - For stacked layouts such as memory maps, use a `rectangle` block with `$HW`, `$SW`… table rows, so that all rows are equally wide.
 - Link nested boxes directly, with `left to right direction`, to keep their order.
 - SVGs are inlined at build time, so they follow the theme. `scripts/theme-diagrams.mjs` swaps palette colours for theme tokens, so use only the colours in `_theme.iuml`.
+
+### Animated diagrams
+
+Where a concept is about behaviour over time, write the SVG by hand in `diagrams/animated/<name>.svg`, using CSS keyframes. A file there takes priority over a generated diagram of the same name. Use the theme variables for colour, give each `@keyframes` a unique name, and make sure the SVG reads as a complete picture without animation, because it shows as a still image when a visitor has reduced motion turned on.
 
 ## Contact form
 

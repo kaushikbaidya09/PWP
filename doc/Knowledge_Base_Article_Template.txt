@@ -223,4 +223,5 @@ PAGE BEHAVIOUR
 - Under the Hood, Real-World Applications, Common Mistakes, Debugging and
   Troubleshooting, Design Considerations and Best Practices, and Expert Notes
   fold away by default.
-- Related Topics items that start with an article's name become links.
+- Each Related Topics item must start with an article's name, and becomes a link.
+  The build fails otherwise, so list only articles that exist.

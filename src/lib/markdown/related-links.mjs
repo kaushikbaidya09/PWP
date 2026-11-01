@@ -44,7 +44,7 @@ function linkItem(li) {
         const name = normal(a.name);
         return lower.startsWith(name) && !/[a-z0-9]/.test(lower[name.length] || ' ');
     });
-    if (!match) return;
+    if (!match) throw new Error(`Related Topics: "${value}" does not name an article`);
     const n = match.name.length;
     hit.parent.children.splice(
         hit.index,

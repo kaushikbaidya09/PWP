@@ -14,6 +14,16 @@ const cache = new Map();
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 
 function scopeCss(css, scope) {
+    /* @keyframes rules are global and must not be prefixed */
+    const frames = [];
+    const plain = css.replace(/@keyframes[^{]+\{(?:[^{}]*\{[^{}]*\})*\s*\}/g, (m) => {
+        frames.push(m);
+        return '';
+    });
+    return scopeRules(plain, scope) + frames.join('');
+}
+
+function scopeRules(css, scope) {
     return css.replace(/([^{}]+)\{/g, (_, sel) =>
         sel.trim().startsWith('@')
             ? `${sel}{`
@@ -26,7 +36,10 @@ function scopeCss(css, scope) {
 
 function load(name) {
     if (cache.has(name)) return cache.get(name);
-    let svg = fs.readFileSync(path.join(process.cwd(), 'diagrams/generated', `${name}.svg`), 'utf8');
+    /* hand-written animations live beside the generated PlantUML output */
+    const animated = path.join(process.cwd(), 'diagrams/animated', `${name}.svg`);
+    const file = fs.existsSync(animated) ? animated : path.join(process.cwd(), 'diagrams/generated', `${name}.svg`);
+    let svg = fs.readFileSync(file, 'utf8');
     const scope = `dg-${name.replace(/_/g, '-')}`;
     for (const [, id] of svg.matchAll(/\sid="([^"]+)"/g)) {
         svg = svg

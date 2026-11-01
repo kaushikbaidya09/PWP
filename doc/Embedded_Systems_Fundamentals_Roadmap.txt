@@ -4,7 +4,7 @@ EMBEDDED SYSTEMS FUNDAMENTALS ROADMAP
 PHASE 1: CORE FOUNDATIONS (MUST KNOW)
 -------------------------------------
 
-1. MCU Boot Sequence: What Really Happens Before main()
+1. MCU Boot Sequence: What Happens Before main() Runs
    - Reset
    - Vector table
    - Stack initialization
@@ -12,7 +12,7 @@ PHASE 1: CORE FOUNDATIONS (MUST KNOW)
    - .data and .bss initialization
    - Entering main()
 
-2. Memory Architecture: Understanding Flash, RAM, Stack, Heap and Memory Maps
+2. Memory Architecture: How Flash, RAM, Stack and Heap Fit Together
    - Flash memory
    - SRAM
    - EEPROM
@@ -21,7 +21,7 @@ PHASE 1: CORE FOUNDATIONS (MUST KNOW)
    - Heap
    - Memory regions
 
-3. CPU Execution Model: How a Microcontroller Executes Instructions
+3. CPU Execution Model: How a Processor Runs Your Code
    - Registers
    - Program Counter
    - Stack Pointer
@@ -29,14 +29,14 @@ PHASE 1: CORE FOUNDATIONS (MUST KNOW)
    - Function calls
    - Return addresses
 
-4. Interrupts: How Embedded Systems React to Events
+4. Interrupts: How Hardware Gets the CPU's Attention
    - Polling vs Interrupts
    - ISR
    - Interrupt priorities
    - Latency
    - Context saving
 
-5. Clock System Fundamentals: The Heartbeat of a Microcontroller
+5. Clock System Fundamentals: Where a Microcontroller's Timing Comes From
    - Oscillators
    - Crystal clocks
    - PLL
@@ -46,30 +46,30 @@ PHASE 1: CORE FOUNDATIONS (MUST KNOW)
 PHASE 2: HOW EMBEDDED SYSTEMS ARE STRUCTURED
 --------------------------------------------
 
-6. Event-Driven Systems: The Core Philosophy of Embedded Design
+6. Event-Driven Systems: Reacting to Events Instead of Polling
    - Events
    - Triggers
    - Reactive systems
    - Event loops
 
-7. State Machines: The Most Important Embedded Design Pattern
+7. State Machines: Organising Firmware Behaviour Into Clear Steps
    - States
    - Events
    - Transitions
    - FSM design
 
-8. Bare-Metal Architecture: Building Systems Without an RTOS
+8. Bare-Metal Architecture: Structuring Firmware Without an RTOS
    - Superloop
    - Cooperative scheduling
    - Event flags
 
-9. RTOS Fundamentals: Running Multiple Tasks Predictably
+9. RTOS Fundamentals: Running Several Tasks on One CPU
    - Tasks
    - Scheduling
    - Context switching
    - Priorities
 
-10. Concurrency and Synchronization
+10. Concurrency and Synchronization: Keeping Shared Data Safe
     - Race conditions
     - Mutexes
     - Semaphores
@@ -79,50 +79,50 @@ PHASE 2: HOW EMBEDDED SYSTEMS ARE STRUCTURED
 PHASE 3: HARDWARE INTERACTION
 -----------------------------
 
-11. GPIO Fundamentals: Understanding Digital Inputs and Outputs
+11. GPIO Fundamentals: Controlling and Reading Digital Pins
 
-12. Timers and Counters: The Most Versatile Peripheral
+12. Timers and Counters: Measuring Time and Generating PWM
 
-13. Analog Systems: ADCs, DACs and Real-World Signals
+13. Analog Systems: Converting Real-World Signals to Numbers and Back
 
-14. DMA: Moving Data Without CPU Intervention
+14. DMA: Moving Data Without Using the CPU
 
 PHASE 4: COMMUNICATION
 ----------------------
 
-15. Serial Communication Fundamentals
+15. Serial Communication Fundamentals: Sending Data One Bit at a Time
 
-16. UART Explained
+16. UART Explained: Simple Serial Communication Over Two Wires
 
-17. SPI Explained
+17. SPI Explained: Fast Communication With Peripheral Chips
 
-18. I2C Explained
+18. I2C Explained: Connecting Many Devices Over Two Wires
 
-19. CAN Bus Explained
+19. CAN Bus Explained: Reliable Communication Between Vehicle Controllers
 
 PHASE 5: RELIABILITY AND DEBUGGING
 ----------------------------------
 
-20. Watchdog Timers: Designing Systems That Recover
+20. Watchdog Timers: Recovering Automatically From Hangs
 
-21. Fault Handling and Crash Analysis
+21. Fault Handling and Crash Analysis: Finding Out Why Firmware Crashed
 
-22. Embedded Debugging: Beyond printf()
+22. Embedded Debugging: Finding Bugs Beyond printf()
 
-23. Memory Corruption and System Stability
+23. Memory Corruption and System Stability: When Bad Writes Crash Firmware
 
 PHASE 6: ADVANCED FOUNDATIONS
 -----------------------------
 
-24. Linker Scripts Explained
+24. Linker Scripts Explained: How Your Code Gets Placed in Memory
 
-25. Bootloaders and Firmware Updates
+25. Bootloaders and Firmware Updates: Replacing Firmware Safely
 
-26. Power Management Fundamentals
+26. Power Management Fundamentals: Making Batteries Last Longer
 
-27. Embedded Security Fundamentals
+27. Embedded Security Fundamentals: Protecting a Device in Layers
 
-28. Firmware Architecture Patterns
+28. Firmware Architecture Patterns: Organising Code So It Can Grow
 
 TOP 12 PRIORITY ARTICLES
 ------------------------

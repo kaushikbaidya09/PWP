@@ -69,11 +69,7 @@ The HSM enforces policy: key usage limits, authentication PINs, and sometimes at
 
 ## Integrating With TLS
 
-On Embedded Linux, OpenSSL 3 selects implementations through providers. An application can load a certificate as usual but reference the private key by a URI, so TLS works unchanged while signing happens in hardware:
-
-```text
-Application -> OpenSSL -> HSM provider -> driver (I2C / SPI / PCIe) -> HSM
-```
+On Embedded Linux, OpenSSL 3 selects implementations through providers. An application can load a certificate as usual but reference the private key by a URI, so TLS works unchanged while signing happens in hardware. Each request passes from the application to OpenSSL, then to the HSM provider and its driver, and finally to the HSM over I2C, SPI or PCIe.
 
 Writing a custom provider means implementing key management and signature operations for the hardware. Application code stays the same, and only the private key operation moves. On MCUs, mbedTLS offers a similar route through the PSA Crypto driver interface.
 

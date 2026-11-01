@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250"><style>text{font-family:var(--sans),sans-serif;font-size:13px;fill:var(--text-2)}.b{font-weight:600;fill:var(--text)}.m{font-size:11px;fill:var(--text-3)}.l{fill:none;stroke:var(--text-2);stroke-width:2}.g{fill:none;stroke:var(--border-3);stroke-width:1}.d{stroke-dasharray:4 4}.box{fill:var(--surface-2);stroke:var(--border-3)}.head{stroke:var(--text);stroke-width:1.5;animation:tp-sweep 9s linear infinite}@keyframes tp-sweep{from{transform:translateX(0)}to{transform:translateX(540px)}}</style>
+<text class="b" x="10" y="24">Counter</text><text class="b" x="10" y="190">Pin</text>
+<path class="g d" d="M80 88H620"/><text class="m" x="578" y="82">compare</text>
+<path class="l" d="M80 110L260 20V110L440 20V110L620 20"/>
+<path class="g" d="M80 110H620"/>
+<path class="l" d="M80 150H125V210H260V150H305V210H440V150H485V210H620"/>
+<text class="m" x="86" y="232">high until the count reaches compare, then low</text>
+<path class="head" d="M80 12V220"/></svg>
